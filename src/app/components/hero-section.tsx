@@ -6,7 +6,15 @@ import { Button } from "./ui/button";
 
 export default function HeroSection() {
   return (
-    <div className="h-screen">
+    <div className=" relative">
+      <div
+        className="w-full h-full absolute inset-0 z-10"
+        style={{
+          backgroundImage: "url(/mask.svg)",
+          backgroundRepeat: "repeat",
+          backgroundSize: "auto",
+        }}
+      />
       <div className=" relative overflow-hidden h-full pt-6">
         <HeroHeader />
         <Image
@@ -16,14 +24,7 @@ export default function HeroSection() {
           height={942}
           className="absolute inset-0 w-full h-full object-cover bg-her"
         />
-        <div
-          className="w-full h-full absolute inset-0 z-10"
-          style={{
-            backgroundImage: "url(/mask.svg)",
-            backgroundRepeat: "repeat",
-            backgroundSize: "auto",
-          }}
-        />
+
         <div className="h-full flex flex-col items-center relative z-10 mt-[151px]">
           <div className="px-2.5 h-[37px] border border-[#4D4D4D] rounded-[9px] flex items-center mb-[22px]">
             <div className="px-2 flex items-center gap-[2px] text-[17px] text-white font-[family-name:var(--font-vt323)] uppercase ">
@@ -104,6 +105,15 @@ export default function HeroSection() {
             <Circle />
           </div>
         </div>
+      </div>
+      <div className="mt-[117px] h-[589px]  relative overflow-hidden">
+        <Image
+          src="/sub-hero.svg"
+          alt="hero"
+          width={1801}
+          height={589}
+          className="opacity-[0.38] mix-blend-luminosity w-full h-full object-contain"
+        />
       </div>
     </div>
   );
