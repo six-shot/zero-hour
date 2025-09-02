@@ -41,48 +41,54 @@ const featureCards = [
     description:
       "We work 24/7 to ensure your entry to market exceeds expectations, our in house systems work 24/7 to strategically place your IP in front of investors.",
     pattern: (
-      <div className="w-full h-full bg-gradient-to-br from-orange-500/20 to-red-500/20" />
+      <div className="w-full h-full bg-gradient-to-br from-blue-500/20 to-purple-500/20" />
     ),
+    image: "/1.svg",
   },
   {
     title: "BLOCKCHAIN ARCHITECTURE",
     description:
       "CUSTOM SMART CONTRACT DEVELOPMENT, TOKENOMICS DESIGN, AND DECENTRALIZED INFRASTRUCTURE TO MAXIMIZE YOUR IP'S WEB3 POTENTIAL.",
     pattern: (
-      <div className="w-full h-full bg-gradient-to-br from-cyan-500/20 to-blue-500/20" />
+      <div className="w-full h-full bg-gradient-to-br from-green-500/20 to-blue-500/20" />
     ),
+    image: "/2.svg",
   },
   {
     title: "Launch  Protocol",
     description:
       "CUSTOM SMART CONTRACT DEVELOPMENT, TOKENOMICS DESIGN, AND DECENTRALIZED INFRASTRUCTURE TO MAXIMIZE YOUR IP'S WEB3 POTENTIAL.",
     pattern: (
-      <div className="w-full h-full bg-gradient-to-br from-yellow-500/20 to-orange-500/20" />
+      <div className="w-full h-full bg-gradient-to-br from-purple-500/20 to-pink-500/20" />
     ),
+    image: "/3.svg",
   },
   {
     title: "STRATEGIC IP MAPPING",
     description:
       "We work 24/7 to ensure your entry to market exceeds expectations, our in house systems work 24/7 to strategically place your IP in front of investors.",
     pattern: (
-      <div className="w-full h-full bg-gradient-to-br from-indigo-500/20 to-purple-500/20" />
+      <div className="w-full h-full bg-gradient-to-br from-blue-500/20 to-purple-500/20" />
     ),
+    image: "/1.svg",
   },
   {
     title: "BLOCKCHAIN ARCHITECTURE",
     description:
       "CUSTOM SMART CONTRACT DEVELOPMENT, TOKENOMICS DESIGN, AND DECENTRALIZED INFRASTRUCTURE TO MAXIMIZE YOUR IP'S WEB3 POTENTIAL.",
     pattern: (
-      <div className="w-full h-full bg-gradient-to-br from-teal-500/20 to-green-500/20" />
+      <div className="w-full h-full bg-gradient-to-br from-green-500/20 to-blue-500/20" />
     ),
+    image: "/2.svg",
   },
   {
     title: "Launch  Protocol",
     description:
       "CUSTOM SMART CONTRACT DEVELOPMENT, TOKENOMICS DESIGN, AND DECENTRALIZED INFRASTRUCTURE TO MAXIMIZE YOUR IP'S WEB3 POTENTIAL.",
     pattern: (
-      <div className="w-full h-full bg-gradient-to-br from-rose-500/20 to-pink-500/20" />
+      <div className="w-full h-full bg-gradient-to-br from-purple-500/20 to-pink-500/20" />
     ),
+    image: "/3.svg",
   },
 ];
 

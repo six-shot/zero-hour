@@ -155,8 +155,6 @@ export const AutoSlider = forwardRef<AutoSliderRef, AutoSliderProps>(
                   />
                 </svg>
 
-            
-
                 {/* Content */}
                 <motion.div
                   className="absolute inset-0 p-4 flex flex-col justify-center items-center text-white"
@@ -164,14 +162,16 @@ export const AutoSlider = forwardRef<AutoSliderRef, AutoSliderProps>(
                   animate={{ opacity: 1 }}
                   transition={{ delay: index * 0.2 + 0.4 }}
                 >
-                  <Image
-                    src={card.image}
-                    alt={card.title}
-                    width={296}
-                    height={296}
-                    className="opacity-60"
-                  />
-                  <h3 className="font-[family-name:var(--font-sentex)] text-[24px] leading-[24px] uppercase">
+                  {card.image && (
+                    <Image
+                      src={card.image}
+                      alt={card.title}
+                      width={296}
+                      height={296}
+                      className="opacity-60"
+                    />
+                  )}
+                  <h3 className="font-[family-name:var(--font-sentex)] text-[24px] leading-[24px] uppercase mt-5">
                     {card.title}
                   </h3>
                   <p className="text-[#c5c5c5] text-[24px] leading-[24px]  font-[family-name:var(--font-vt323)]">
