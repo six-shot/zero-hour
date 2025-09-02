@@ -144,7 +144,7 @@ export const AutoSlider = ({ cards }: AutoSliderProps) => {
           </svg>
         </motion.button> */}
 
-        {/* <motion.button
+        <motion.button
           onClick={goToNext}
           disabled={currentIndex === cards.length - 1}
           className={`absolute right-4 top-1/2 -translate-y-1/2 z-20 w-12 h-12 backdrop-blur-sm border rounded-full flex items-center justify-center transition-all duration-300 group ${
@@ -171,7 +171,7 @@ export const AutoSlider = ({ cards }: AutoSliderProps) => {
               d="M9 5l7 7-7 7"
             />
           </svg>
-        </motion.button> */}
+        </motion.button>
       </div>
     </div>
   );

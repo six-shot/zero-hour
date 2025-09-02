@@ -242,7 +242,7 @@ export default function Feauture1() {
         </div>
       </div>
       <div className="mt-[105px] w-full">
-        <div className="relative overflow-hidden">
+        <div className="relative overflow-hidden ml-[calc((100vw-1440px)/2)]">
           <AutoSlider cards={featureCards} />
         </div>
       </div>
