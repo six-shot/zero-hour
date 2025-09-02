@@ -8,8 +8,7 @@ export default function Feauture3() {
         <div className="px-2.5 h-[23px] border border-[#4D4D4D] rounded-[9px] flex items-center mb-[22px]">
           <div className="px-2 flex items-center gap-[2px] text-[17px] text-white font-[family-name:var(--font-vt323)] uppercase ">
             <span>Success protocol</span>
-            <ArrowRight />
-            <span>Web3 Transformation</span>
+
           </div>
         </div>
         <h4 className="text-[38px] leading-[38px] font-[family-name:var(--font-sentex)] text-white uppercase text-center">
@@ -21,6 +20,7 @@ export default function Feauture3() {
           creators ever imagined.
         </p>{" "}
       </div>
+      <div className='mt-[45px]'></div>
     </div>
   );
 }

@@ -168,13 +168,13 @@ export const AutoSlider = forwardRef<AutoSliderRef, AutoSliderProps>(
                       alt={card.title}
                       width={296}
                       height={296}
-                      className="opacity-60"
+                      className="opacity-[0.35] mix-blend-luminosity"
                     />
                   )}
                   <h3 className="font-[family-name:var(--font-sentex)] text-[24px] leading-[24px] uppercase mt-5">
                     {card.title}
                   </h3>
-                  <p className="text-[#c5c5c5] text-[24px] leading-[24px]  font-[family-name:var(--font-vt323)]">
+                  <p className="text-[#c5c5c5] text-[24px] leading-[24px]  font-[family-name:var(--font-vt323)] mt-2.5">
                     {card.description}
                   </p>
                 </motion.div>
