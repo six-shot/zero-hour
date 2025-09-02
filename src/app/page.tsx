@@ -1,8 +1,8 @@
 import Image from "next/image";
 import HeroSection from "./components/hero-section";
 import Feauture1 from "./components/feauture-1";
-import ProductPreview from "./components/auto-slider";
 import Feauture2 from "./components/feauture-2";
+import Feauture3 from "./components/feauture-3";
 
 export default function Home() {
   return (
@@ -10,6 +10,7 @@ export default function Home() {
       <HeroSection />
       <Feauture1/>
       <Feauture2/>
+      <Feauture3/>
    
     </div>
   );

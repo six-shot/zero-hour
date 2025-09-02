@@ -1,5 +1,5 @@
 import React from "react";
-import Image from "next/image";
+import { motion } from "framer-motion";
 import { cn } from "../../lib/utils";
 import { ArrowRight, NextButton, PrevButton } from "./ui/icons";
 
@@ -20,34 +20,30 @@ export function LeftArrow({
   disabled: boolean;
   className?: string;
 }) {
-  const handleClick = (e: React.MouseEvent) => {
-    e.preventDefault();
-    e.stopPropagation();
+  const handleClick = () => {
     if (!disabled) {
       onClick();
     }
   };
 
-  const handleMouseDown = (e: React.MouseEvent) => {
-    e.preventDefault();
-  };
-
   return (
-    <button
+    <motion.button
       onClick={handleClick}
-      onMouseDown={handleMouseDown}
       disabled={disabled}
       className={cn(
-        "cursor-pointer transition-all duration-150 active:scale-95 select-none",
+        "cursor-pointer select-none",
         disabled && "opacity-50 cursor-not-allowed",
         !disabled && "hover:opacity-80",
         className
       )}
       type="button"
       style={{ touchAction: "manipulation" }}
+      whileHover={!disabled ? { scale: 1.05 } : {}}
+      whileTap={!disabled ? { scale: 0.95 } : {}}
+      transition={{ duration: 0.1 }}
     >
       <PrevButton />
-    </button>
+    </motion.button>
   );
 }
 
@@ -60,34 +56,30 @@ export function RightArrow({
   disabled: boolean;
   className?: string;
 }) {
-  const handleClick = (e: React.MouseEvent) => {
-    e.preventDefault();
-    e.stopPropagation();
+  const handleClick = () => {
     if (!disabled) {
       onClick();
     }
   };
 
-  const handleMouseDown = (e: React.MouseEvent) => {
-    e.preventDefault();
-  };
-
   return (
-    <button
+    <motion.button
       onClick={handleClick}
-      onMouseDown={handleMouseDown}
       disabled={disabled}
       className={cn(
-        "cursor-pointer transition-all duration-150 active:scale-95 select-none",
+        "cursor-pointer select-none",
         disabled && "opacity-50 cursor-not-allowed",
         !disabled && "hover:opacity-80",
         className
       )}
       type="button"
       style={{ touchAction: "manipulation" }}
+      whileHover={!disabled ? { scale: 1.05 } : {}}
+      whileTap={!disabled ? { scale: 0.95 } : {}}
+      transition={{ duration: 0.1 }}
     >
       <NextButton />
-    </button>
+    </motion.button>
   );
 }
 

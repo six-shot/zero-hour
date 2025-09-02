@@ -1,73 +1,93 @@
 "use client";
 import React, { useRef, useState, useEffect } from "react";
 import { ArrowRight } from "./ui/icons";
-import AutoScroll from "./auto-slider";
+import { AutoSlider, AutoSliderRef } from "./AutoSlider";
 import { NavigationArrows } from "./NavigationArrows";
-import { FlexibleAutoScrollRef } from "./FlexibleAutoScroll";
 import one from "../../../public/1.svg";
 import two from "../../../public/2.svg";
 import three from "../../../public/3.svg";
 
-// Card data
+// Card data - converted to AutoSlider format
 const featureCards = [
   {
     title: "STRATEGIC IP MAPPING",
     description:
       "We work 24/7 to ensure your entry to market exceeds expectations, our in house systems work 24/7 to strategically place your IP in front of investors.",
-    image: one,
+    pattern: (
+      <div className="w-full h-full bg-gradient-to-br from-blue-500/20 to-purple-500/20" />
+    ),
+    image: "/1.svg",
   },
   {
     title: "BLOCKCHAIN ARCHITECTURE",
     description:
       "CUSTOM SMART CONTRACT DEVELOPMENT, TOKENOMICS DESIGN, AND DECENTRALIZED INFRASTRUCTURE TO MAXIMIZE YOUR IP'S WEB3 POTENTIAL.",
-    image: two,
+    pattern: (
+      <div className="w-full h-full bg-gradient-to-br from-green-500/20 to-blue-500/20" />
+    ),
+    image: "/2.svg",
   },
   {
     title: "Launch  Protocol",
     description:
       "CUSTOM SMART CONTRACT DEVELOPMENT, TOKENOMICS DESIGN, AND DECENTRALIZED INFRASTRUCTURE TO MAXIMIZE YOUR IP'S WEB3 POTENTIAL.",
-    image: three,
+    pattern: (
+      <div className="w-full h-full bg-gradient-to-br from-purple-500/20 to-pink-500/20" />
+    ),
+    image: "/3.svg",
   },
   {
     title: "STRATEGIC IP MAPPING",
     description:
       "We work 24/7 to ensure your entry to market exceeds expectations, our in house systems work 24/7 to strategically place your IP in front of investors.",
-    image: one,
+    pattern: (
+      <div className="w-full h-full bg-gradient-to-br from-orange-500/20 to-red-500/20" />
+    ),
   },
   {
     title: "BLOCKCHAIN ARCHITECTURE",
     description:
       "CUSTOM SMART CONTRACT DEVELOPMENT, TOKENOMICS DESIGN, AND DECENTRALIZED INFRASTRUCTURE TO MAXIMIZE YOUR IP'S WEB3 POTENTIAL.",
-    image: two,
+    pattern: (
+      <div className="w-full h-full bg-gradient-to-br from-cyan-500/20 to-blue-500/20" />
+    ),
   },
   {
     title: "Launch  Protocol",
     description:
       "CUSTOM SMART CONTRACT DEVELOPMENT, TOKENOMICS DESIGN, AND DECENTRALIZED INFRASTRUCTURE TO MAXIMIZE YOUR IP'S WEB3 POTENTIAL.",
-    image: three,
+    pattern: (
+      <div className="w-full h-full bg-gradient-to-br from-yellow-500/20 to-orange-500/20" />
+    ),
   },
   {
     title: "STRATEGIC IP MAPPING",
     description:
       "We work 24/7 to ensure your entry to market exceeds expectations, our in house systems work 24/7 to strategically place your IP in front of investors.",
-    image: one,
+    pattern: (
+      <div className="w-full h-full bg-gradient-to-br from-indigo-500/20 to-purple-500/20" />
+    ),
   },
   {
     title: "BLOCKCHAIN ARCHITECTURE",
     description:
       "CUSTOM SMART CONTRACT DEVELOPMENT, TOKENOMICS DESIGN, AND DECENTRALIZED INFRASTRUCTURE TO MAXIMIZE YOUR IP'S WEB3 POTENTIAL.",
-    image: two,
+    pattern: (
+      <div className="w-full h-full bg-gradient-to-br from-teal-500/20 to-green-500/20" />
+    ),
   },
   {
     title: "Launch  Protocol",
     description:
       "CUSTOM SMART CONTRACT DEVELOPMENT, TOKENOMICS DESIGN, AND DECENTRALIZED INFRASTRUCTURE TO MAXIMIZE YOUR IP'S WEB3 POTENTIAL.",
-    image: three,
+    pattern: (
+      <div className="w-full h-full bg-gradient-to-br from-rose-500/20 to-pink-500/20" />
+    ),
   },
 ];
 
 export default function Feauture1() {
-  const scrollRef = useRef<FlexibleAutoScrollRef>(null);
+  const sliderRef = useRef<AutoSliderRef>(null);
   const [canGoPrevious, setCanGoPrevious] = useState(false);
   const [canGoNext, setCanGoNext] = useState(true);
 
@@ -77,11 +97,11 @@ export default function Feauture1() {
   };
 
   const handlePrevious = () => {
-    scrollRef.current?.scrollToPrevious();
+    sliderRef.current?.goToPrevious();
   };
 
   const handleNext = () => {
-    scrollRef.current?.scrollToNext();
+    sliderRef.current?.goToNext();
   };
 
   return (
@@ -123,10 +143,10 @@ export default function Feauture1() {
           </div>
         </div>
       </div>
-      <div className="mt-[105px] w-full relative">
-        <AutoScroll
+      <div className="mt-[105px] w-full relative  overflow-hidden">
+        <AutoSlider
           cards={featureCards}
-          ref={scrollRef}
+          ref={sliderRef}
           onNavigationChange={handleNavigationChange}
         />
       </div>
