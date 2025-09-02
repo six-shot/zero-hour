@@ -199,3 +199,44 @@ export const NextButton = () => (
     />
   </svg>
 );
+
+export const CTACircle = () => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="32"
+    height="32"
+    viewBox="0 0 32 32"
+    fill="none"
+  >
+    <circle
+      cx="15.8964"
+      cy="15.8964"
+      r="15.1738"
+      stroke="white"
+      stroke-width="1.44513"
+    />
+    <circle cx="16.1372" cy="16.1373" r="6.50306" fill="white" />
+  </svg>
+);
+
+
+export const FooterCircle = () => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="33"
+    height="34"
+    viewBox="0 0 33 34"
+    fill="none"
+  >
+    <g opacity="0.2">
+      <circle
+        cx="16.2424"
+        cy="17.0002"
+        r="15.5041"
+        stroke="white"
+        stroke-width="1.47658"
+      />
+      <circle cx="16.4885" cy="17.2462" r="6.64463" fill="white" />
+    </g>
+  </svg>
+);

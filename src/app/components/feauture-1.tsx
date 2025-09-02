@@ -158,7 +158,7 @@ export default function Feauture1() {
           </div>
         </div>
       </div>
-      <div className="mt-[105px] w-full relative  overflow-hidden">
+      <div className="mt-[105px] w-full relative z-[100]  overflow-hidden">
         <AutoSlider
           cards={featureCards}
           ref={sliderRef}

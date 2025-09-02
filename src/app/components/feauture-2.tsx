@@ -12,7 +12,7 @@ export default function Feauture2() {
           backgroundSize: "auto",
         }}
       />
-      <div className="flex flex-col items-center">
+      <div className="flex flex-col items-center z-[100]">
         <div className="px-2.5 h-[23px] border border-[#4D4D4D] rounded-[9px] flex items-center mb-[22px]">
           <div className="px-2 flex items-center gap-[2px] text-[17px] text-white font-[family-name:var(--font-vt323)] uppercase ">
             <span>Web2</span>
@@ -28,7 +28,7 @@ export default function Feauture2() {
         </p>{" "}
       </div>
       <div className="mt-[45px]">
-        <div className="flex gap-[15px] items-start justify-center relative">
+        <div className="flex gap-[15px] items-start justify-center relative z-[100]">
           <div
             style={{
               width: "240px",
