@@ -53,7 +53,7 @@ export default function Feauture2() {
               height: "170px",
               backgroundColor: "rgba(58, 58, 58, 0.16)",
             }}
-            className="flex flex-col gap-[14px] pt-[23px]  items-center rounded-[7.1px] font-[family-name:var(--font-vt323)]"
+            className="flex flex-col  pt-[23px]  items-center rounded-[7.1px] font-[family-name:var(--font-vt323)]"
           >
             <h2 className="text-[34px] ">02</h2>
             <h3 className="text-white text-[35px] leading-[35px] font-[family-name:var(--font-sentex)] text-center uppercase">
@@ -69,7 +69,7 @@ export default function Feauture2() {
               height: "170px",
               backgroundColor: "rgba(58, 58, 58, 0.16)",
             }}
-            className="flex flex-col gap-[14px] pt-[23px]  items-center rounded-[7.1px] font-[family-name:var(--font-vt323)]"
+            className="flex flex-col  pt-[23px]  items-center rounded-[7.1px] font-[family-name:var(--font-vt323)]"
           >
             <h2 className="text-[34px] ">04</h2>
             <h3 className="text-white text-[35px] leading-[35px] font-[family-name:var(--font-sentex)] text-center uppercase">
@@ -87,7 +87,7 @@ export default function Feauture2() {
               clipPath:
                 "polygon(100% 96%, 100% 10.5%, 99% 7.8%, 92.5% 0.9%, 90.5% 0%, 3% 0%, 0% 3.0%, 0% 81%, 3% 84%, 50% 84%, 52% 85%, 64% 98%, 66% 99%, 97% 99%, 100% 96%)",
             }}
-            className="flex flex-col gap-[14px] pt-[23px] items-center font-[family-name:var(--font-vt323)]"
+            className="flex flex-col  pt-[23px] items-center font-[family-name:var(--font-vt323)]"
           >
             <h2 className="text-[34px] ">04</h2>
             <h3 className="text-white text-[35px] leading-[35px] font-[family-name:var(--font-sentex)] text-center uppercase">

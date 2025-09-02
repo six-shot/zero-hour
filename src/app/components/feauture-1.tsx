@@ -3,12 +3,10 @@ import React, { useRef, useState, useEffect } from "react";
 import { ArrowRight } from "./ui/icons";
 import { AutoSlider, AutoSliderRef } from "./AutoSlider";
 import { NavigationArrows } from "./NavigationArrows";
-import one from "../../../public/1.svg";
-import two from "../../../public/2.svg";
-import three from "../../../public/3.svg";
+import { ReusableCard } from "./ReusableCard";
 
-// Card data - converted to AutoSlider format
-const featureCards = [
+// Card data - converted to ReactNode array for AutoSlider
+const featureCardsData = [
   {
     title: "STRATEGIC IP MAPPING",
     description:
@@ -91,6 +89,17 @@ const featureCards = [
     image: "/3.svg",
   },
 ];
+
+// Convert data to ReactNode array
+const featureCards = featureCardsData.map((cardData, index) => (
+  <ReusableCard
+    key={index}
+    title={cardData.title}
+    description={cardData.description}
+    image={cardData.image}
+    pattern={cardData.pattern}
+  />
+));
 
 export default function Feauture1() {
   const sliderRef = useRef<AutoSliderRef>(null);
