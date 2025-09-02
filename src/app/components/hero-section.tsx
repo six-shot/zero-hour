@@ -1,20 +1,23 @@
 import Image from "next/image";
 import React from "react";
 import { HeroHeader } from "./hero-header";
-import {
-  ArrowRight,
-  Circle,
-  Pluses,
-} from "./ui/icons";
+import { ArrowRight, Circle, Pluses } from "./ui/icons";
 import { Button } from "./ui/button";
 
 export default function HeroSection() {
   return (
     <div className="h-screen">
-      <div className=" relative overflow-hidden h-full mt-6 ">
+      <div className=" relative overflow-hidden h-full pt-6">
         <HeroHeader />
+        <Image
+          src="/hero.svg"
+          alt="hero"
+          width={1440}
+          height={942}
+          className="absolute inset-0 w-full h-full object-cover bg-her"
+        />
         <div
-          className="w-full h-full absolute inset-0"
+          className="w-full h-full absolute inset-0 z-10"
           style={{
             backgroundImage: "url(/mask.svg)",
             backgroundRepeat: "repeat",

@@ -6,6 +6,6 @@ body{
 }
 .bg-her{
   opacity: 0.46;
-background: linear-gradient(180deg, rgba(0, 0, 0, 0.00) 0%, #0B0211 86.9%), lightgray -104.099px 0px / 114.22% 100% no-repeat;
+background: linear-gradient(180deg, rgba(0, 0, 0, 0.00) 0%, #0B0211 86.9%) no-repeat;
 mix-blend-mode: luminosity;
 }
