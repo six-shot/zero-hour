@@ -5,6 +5,7 @@ import Feauture3 from "./components/feauture-3";
 import CTA1 from "./components/cta-1";
 import CTA2 from "./components/cta-2";
 import Footer from "./components/footer";
+import FrequentlyAskedQuestions from "./components/FAQ";
 
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
       <Feauture2 />
       <Feauture3 />
       <CTA1 />
+      <FrequentlyAskedQuestions/>
       <CTA2 />
     </div>
   );

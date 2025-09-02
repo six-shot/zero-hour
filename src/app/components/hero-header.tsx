@@ -30,7 +30,7 @@ export const HeroHeader = () => {
   return (
     <header className="flex justify-center ">
       <nav
-        className={`fixed flex items-center w-full z-50 h-[60px] transition-all duration-300   font-[family-name:var(--font-vt323)] max-w-[1440px] mx-auto ${
+        className={`fixed flex items-center w-full z-[10000] h-[60px] transition-all duration-300   font-[family-name:var(--font-vt323)] max-w-[1440px] mx-auto ${
           isScrolled ? "bg-black/20 backdrop-blur-md " : "bg-transaparent"
         }`}
       >
