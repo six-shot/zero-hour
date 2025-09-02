@@ -1,6 +1,5 @@
 "use client";
-import React, { useRef, useState, useEffect } from "react";
-import { ArrowRight } from "./ui/icons";
+import React, { useRef, useState } from "react";
 import { AutoSlider, AutoSliderRef } from "./AutoSlider";
 import { NavigationArrows } from "./NavigationArrows";
 import { ReusableCard } from "./ReusableCard";
@@ -88,7 +87,15 @@ export default function Feauture3() {
   };
 
   return (
-    <div className="pt-[98px] pb-[102px] relative">
+    <div className="pt-[98px] pb-[102px] bg-black relative">
+      <div
+        className="w-full h-full absolute inset-0 z-10"
+        style={{
+          backgroundImage: "url(/mask.svg)",
+          backgroundRepeat: "repeat",
+          backgroundSize: "auto",
+        }}
+      />
       <div
         className="w-full h-full absolute inset-0 z-10"
         style={{
@@ -108,7 +115,7 @@ export default function Feauture3() {
             ZEROhoURS VICTORIES
           </h4>
           <p className="text-[28px] leading-[28px] font-[family-name:var(--font-vt323)] text-white uppercase mt-[17px]">
-            Witness the transformation. These IPs didn't just survive the Web3
+            Witness the transformation. These IPs didn&apos;t just survive the Web3
             transition—
             <br /> they evolved into something more powerful than their creators
             ever imagined.
