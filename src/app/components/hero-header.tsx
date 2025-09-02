@@ -2,9 +2,8 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import React, { useState, useEffect } from "react";
-import Image from "next/image";
 import { Button } from "./ui/button";
-import { BorderLeft, BorderRight, Logo } from "./ui/icons";
+import {  Logo } from "./ui/icons";
 
 const menuItems = [
   { name: "About", href: "/" },

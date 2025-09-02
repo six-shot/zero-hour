@@ -3,10 +3,8 @@ import React from "react";
 import { HeroHeader } from "./hero-header";
 import {
   ArrowRight,
-  BorderLeft,
-  BorderRight,
-  ButtonBone,
-  ButtonBorder,
+  Circle,
+  Pluses,
 } from "./ui/icons";
 import { Button } from "./ui/button";
 
@@ -37,9 +35,70 @@ export default function HeroSection() {
             Helping systems strategically tokenize, dedicated <br /> to growing
             Web-3 roots into your IP
           </p>
-          <div className="mt-[54px] flex gap-[45px] items-center justify-center">
+          <div className="my-[54px] flex gap-[45px] items-center justify-center">
             <Button>Contact</Button>
             <Button>Past Projects</Button>
+          </div>
+          <div className="flex gap-[9px] items-start justify-center relative">
+            <div className="absolute -right-[200px] top-[92px]">
+              <Pluses />
+            </div>
+            <div
+              style={{
+                width: "240px",
+                height: "199px",
+                backgroundColor: "rgba(58, 58, 58, 0.16)",
+                clipPath:
+                  "polygon(0% 96%, 0% 10.5%, 1% 7.8%, 7.5% 0.9%, 9.5% 0%, 97% 0%, 100% 3.0%, 100% 81%, 97% 84%, 50% 84%, 48% 85%, 36% 98%, 34% 99%, 3% 99%, 0% 96%)",
+              }}
+              className="flex flex-col gap-[14px] pt-[37px] items-center"
+            >
+              <h1 className="text-white text-[61px] leading-[61px] font-[family-name:var(--font-vt323)] text-center uppercase">
+                127+
+              </h1>
+              <p className="text-white text-[30px] leading-[30px] font-[family-name:var(--font-vt323)] text-center uppercase">
+                Ips Transformed
+              </p>
+            </div>
+            <div
+              style={{
+                width: "284px",
+                height: "170px",
+                backgroundColor: "rgba(58, 58, 58, 0.16)",
+              }}
+              className="flex flex-col gap-[14px] pt-[37px]  items-center rounded-[7.1px]"
+            >
+              <h1 className="text-white text-[61px] leading-[61px] font-[family-name:var(--font-vt323)] text-center uppercase">
+                $2.4B
+              </h1>
+              <p className="text-white text-[30px] leading-[30px] font-[family-name:var(--font-vt323)] text-center uppercase">
+                Value created
+              </p>
+            </div>
+            <div
+              style={{
+                width: "240px",
+                height: "199px",
+                backgroundColor: "rgba(58, 58, 58, 0.16)",
+                clipPath:
+                  "polygon(100% 96%, 100% 10.5%, 99% 7.8%, 92.5% 0.9%, 90.5% 0%, 3% 0%, 0% 3.0%, 0% 81%, 3% 84%, 50% 84%, 52% 85%, 64% 98%, 66% 99%, 97% 99%, 100% 96%)",
+              }}
+              className="flex flex-col gap-[14px] pt-[37px] items-center"
+            >
+              <h1 className="text-white text-[61px] leading-[61px] font-[family-name:var(--font-vt323)] text-center uppercase">
+                98%
+              </h1>
+              <p className="text-white text-[30px] leading-[30px] font-[family-name:var(--font-vt323)] text-center uppercase">
+                Success rate
+              </p>
+            </div>
+          </div>
+          <div className="mt-[29px] h-[37px] px-2.5 bg-white/9 rounded-[9px] flex gap-[9px] items-center justify-center">
+            <Circle />
+            <h5 className="text-white text-[17px] font-[family-name:var(--font-vt323)]">
+              Schedule your Web3 transformation consultation
+            </h5>
+            <Circle />
           </div>
         </div>
       </div>

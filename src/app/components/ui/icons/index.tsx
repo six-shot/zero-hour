@@ -1,30 +1,4 @@
-export const BorderLeft = () => (
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    width="15"
-    height="60"
-    viewBox="0 0 15 60"
-    fill="none"
-  >
-    <path d="M0 60L1.31134e-06 45L3 45L3 57L15 57L15 60L0 60Z" fill="#EAEAEA" />
-    <path
-      d="M5.24537e-06 -1.31134e-06L3.93402e-06 15L3 15L3 3L15 3L15 0L5.24537e-06 -1.31134e-06Z"
-      fill="#EAEAEA"
-    />
-  </svg>
-);
-export const BorderRight = () => (
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    width="15"
-    height="60"
-    viewBox="0 0 15 60"
-    fill="none"
-  >
-    <path d="M15 0V15H12V3L0 3V0H15Z" fill="#EAEAEA" />
-    <path d="M15 60V45H12V57H0V60H15Z" fill="#EAEAEA" />
-  </svg>
-);
+
 
 export const Logo = () => (
   <svg
@@ -95,5 +69,95 @@ export const ButtonBone = () => (
     <path d="M128 60V57H23V60H128Z" fill="white" fill-opacity="0.2" />
     <path d="M0 23H3V38H0V23Z" fill="white" fill-opacity="0.2" />
     <path d="M150 23H147V38H150V23Z" fill="white" fill-opacity="0.2" />
+  </svg>
+);
+
+export const Circle = () => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="11"
+    height="12"
+    viewBox="0 0 11 12"
+    fill="none"
+  >
+    <circle cx="5.5" cy="5.99628" r="5.25" stroke="white" stroke-width="0.5" />
+    <circle cx="5.58337" cy="6.07959" r="2.25" fill="white" />
+  </svg>
+);
+
+export const Pluses = () => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="118"
+    height="118"
+    viewBox="0 0 118 118"
+    fill="none"
+  >
+    <path d="M1 45.6471L1 40L7 40" stroke="white" stroke-width="0.705882" />
+    <path
+      d="M1 6.64709L1 1.00004L7 1.00004"
+      stroke="white"
+      stroke-width="0.705882"
+    />
+    <path
+      d="M40 6.64709L40 1.00004L46 1.00004"
+      stroke="white"
+      stroke-width="0.705882"
+    />
+    <path
+      d="M78 6.64709L78 1.00004L84 1.00004"
+      stroke="white"
+      stroke-width="0.705882"
+    />
+    <path
+      d="M117 34L117 39.6471L111 39.6471"
+      stroke="white"
+      stroke-width="0.705882"
+    />
+    <path
+      d="M117 73L117 78.6471L111 78.6471"
+      stroke="white"
+      stroke-width="0.705882"
+    />
+    <path
+      d="M117 112L117 117.647L111 117.647"
+      stroke="white"
+      stroke-width="0.705882"
+    />
+    <path
+      d="M78 112L78 117.647L72 117.647"
+      stroke="white"
+      stroke-width="0.705882"
+    />
+    <path
+      d="M40 112L40 117.647L34 117.647"
+      stroke="white"
+      stroke-width="0.705882"
+    />
+    <path d="M1 84.6471L1 79L7 79" stroke="white" stroke-width="0.705882" />
+    <path
+      d="M40 73L40 78.6471L34 78.6471"
+      stroke="white"
+      stroke-width="0.705882"
+    />
+    <path
+      d="M78 73L78 78.6471L72 78.6471"
+      stroke="white"
+      stroke-width="0.705882"
+    />
+    <path
+      d="M78 34L78 39.6471L72 39.6471"
+      stroke="white"
+      stroke-width="0.705882"
+    />
+    <path
+      d="M40 34L40 39.6471L34 39.6471"
+      stroke="white"
+      stroke-width="0.705882"
+    />
+    <path d="M40 84.6471L40 79L46 79" stroke="white" stroke-width="0.705882" />
+    <path d="M78 84.6471L78 79L84 79" stroke="white" stroke-width="0.705882" />
+    <path d="M78 45.6471L78 40L84 40" stroke="white" stroke-width="0.705882" />
+    <path d="M40 45.6471L40 40L46 40" stroke="white" stroke-width="0.705882" />
   </svg>
 );
