@@ -23,6 +23,7 @@ export function ReusableCard({
   titleClassName = "font-[family-name:var(--font-sentex)] text-[24px] leading-[24px] uppercase mt-5",
   descriptionClassName = "text-[#c5c5c5] text-[24px] leading-[24px] font-[family-name:var(--font-vt323)] mt-2.5",
   imageClassName = " ",
+  enableBlendMode = true,
 }: ReusableCardProps) {
   // Generate stable mask ID to prevent re-renders
   const maskId = useMemo(
@@ -66,7 +67,9 @@ export function ReusableCard({
               alt={title}
               width={300}
               height={256}
-              className={`mix-blend-luminosity  ${imageClassName}`}
+              className={`${
+                enableBlendMode ? "mix-blend-luminosity" : ""
+              } ${imageClassName}`}
             />
           </div>
         )}

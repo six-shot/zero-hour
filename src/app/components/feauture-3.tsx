@@ -65,6 +65,8 @@ const victoryCards = victoryCardsData.map((cardData, index) => (
     image={cardData.image}
     titleClassName="font-[family-name:var(--font-sentex)] text-[24px] leading-[24px] uppercase mt-5"
     descriptionClassName="text-[#c5c5c5] text-[20px] leading-[20px] font-[family-name:var(--font-vt323)] mt-2.5"
+    imageClassName="w-full"
+    enableBlendMode={false}
   />
 ));
 
@@ -115,8 +117,8 @@ export default function Feauture3() {
             ZEROhoURS VICTORIES
           </h4>
           <p className="text-[28px] leading-[28px] font-[family-name:var(--font-vt323)] text-white uppercase mt-[17px]">
-            Witness the transformation. These IPs didn&apos;t just survive the Web3
-            transition—
+            Witness the transformation. These IPs didn&apos;t just survive the
+            Web3 transition—
             <br /> they evolved into something more powerful than their creators
             ever imagined.
           </p>

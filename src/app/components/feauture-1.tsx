@@ -99,6 +99,7 @@ const featureCards = featureCardsData.map((cardData, index) => (
     description={cardData.description}
     image={cardData.image}
     pattern={cardData.pattern}
+    enableBlendMode={true}
   />
 ));
 
@@ -159,7 +160,7 @@ export default function Feauture1() {
           </div>
         </div>
       </div>
-   
+
       <div className="mt-[105px]  py-5 w-full relative z-[100]">
         <AutoSlider
           cards={featureCards}
