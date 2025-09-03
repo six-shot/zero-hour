@@ -1,10 +1,14 @@
+"use client";
 import React from "react";
 import { Button } from "./ui/button";
 import Image from "next/image";
 import { CTACircle } from "./ui/icons";
 import Footer from "./footer";
+import { useSound } from "@/lib/useSound";
 
 export default function CTA2() {
+  const playHoverSound = useSound("/menu-select.mp3");
+
   return (
     <div className="relative py-4 sm:py-6 lg:py-8">
       <div
@@ -40,7 +44,7 @@ export default function CTA2() {
             </p>
           </div>
           <div className="mt-6 sm:mt-8 lg:mt-[35px] flex justify-end items-end w-full px-[70px]">
-            <Button>Book A Session</Button>
+            <Button onMouseEnter={playHoverSound}>Book A Session</Button>
           </div>
         </div>
       </div>

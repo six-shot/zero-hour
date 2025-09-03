@@ -1,7 +1,11 @@
+"use client";
 import React from "react";
 import { Button } from "./ui/button";
+import { useSound } from "@/lib/useSound";
 
 export default function CTA1() {
+  const playHoverSound = useSound("/menu-select.mp3");
+
   return (
     <div className="bg-black relative pt-8 pb-[80px]">
       <div
@@ -24,7 +28,7 @@ export default function CTA1() {
             and build something extraordinary together.
           </p>
           <div className="mt-6 sm:mt-8 lg:mt-[35px]">
-            <Button>Book A Session</Button>
+            <Button onMouseEnter={playHoverSound}>Book A Session</Button>
           </div>
         </div>
       </div>

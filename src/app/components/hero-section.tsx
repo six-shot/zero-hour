@@ -1,10 +1,14 @@
+"use client";
 import Image from "next/image";
 import React from "react";
 import { HeroHeader } from "./hero-header";
 import { ArrowRight, Circle, Pluses } from "./ui/icons";
 import { Button } from "./ui/button";
+import { useSound } from "@/lib/useSound";
 
 export default function HeroSection() {
+  const playHoverSound = useSound("/menu-select.mp3");
+
   return (
     <div className=" relative">
       <div
@@ -47,8 +51,8 @@ export default function HeroSection() {
             IP
           </p>
           <div className="my-[32px] md:my-[54px] flex  sm:flex-row gap-[20px] md:gap-[45px] items-center justify-center">
-            <Button>Contact</Button>
-            <Button>Past Projects</Button>
+            <Button onMouseEnter={playHoverSound}>Contact</Button>
+            <Button onMouseEnter={playHoverSound}>Past Projects</Button>
           </div>
           <div className="flex flex-col md:flex-row gap-[9px] items-center md:items-start justify-center relative px-4 md:px-0">
             <div className="absolute -right-[200px] top-[92px] hidden md:block">
@@ -73,7 +77,6 @@ export default function HeroSection() {
             </div>
             <div
               style={{
-              
                 backgroundColor: "rgba(58, 58, 58, 0.16)",
               }}
               className="md:w-[284px] w-[240px] md:h-[170px] h-[199px] flex flex-col gap-[14px] pt-[37px] items-center rounded-[7.1px] "

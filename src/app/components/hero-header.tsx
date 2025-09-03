@@ -100,6 +100,7 @@ export const HeroHeader = () => {
                 aria-label={menuState ? "Close Menu" : "Open Menu"}
                 className="relative z-20 block cursor-pointer lg:hidden"
                 data-state={menuState ? "active" : "inactive"}
+                onMouseEnter={playHoverSound}
               >
                 <div className="flex flex-col gap-[4px]">
                   <div
