@@ -37,7 +37,7 @@ export const HeroHeader = () => {
           isScrolled ? "bg-black/20 backdrop-blur-md " : "bg-transaparent"
         }`}
       >
-        <div className="transition-all duration-300 flex justify-between  w-full max-w-[1440px] mx-auto relative h-full">
+        <div className="transition-all duration-300 flex justify-between  w-full max-w-[1440px] mx-auto relative h-full w-full">
           <div className="absolute top-0 left-0 w-[3px] h-[15px] bg-[#EAEAEA]"></div>
           <div className="absolute top-0 left-0 w-[15px] h-[3px] bg-[#EAEAEA]"></div>
           {/* Top-right corner */}
@@ -53,7 +53,7 @@ export const HeroHeader = () => {
             {/* Logo */}
 
             {/* Desktop Menu */}
-            <div className="hidden lg:flex lg:justify-between items-center lg:w-full px-[48px]">
+            <div className="hidden lg:flex lg:justify-between items-center lg:w-full px-[48px] ">
               {/* Left side - Last two items */}
               <ul className="flex gap-[64px] text-[28px] uppercase">
                 {menuItems.slice(0, 2).map((item, index) => (
@@ -105,32 +105,37 @@ export const HeroHeader = () => {
             </div>
 
             {/* Mobile Menu Button */}
-            <div className="lg:hidden flex justify-end items-end w-full px-7">
-              <button
-                onClick={() => setMenuState(!menuState)}
-                aria-label={menuState ? "Close Menu" : "Open Menu"}
-                className="relative z-20 block cursor-pointer lg:hidden"
-                data-state={menuState ? "active" : "inactive"}
-                onMouseEnter={playHoverSound}
-              >
-                <div className="flex flex-col gap-[4px]">
-                  <div
-                    className={`w-[30px] h-[2px] bg-white transition-all duration-300 ${
-                      menuState ? "rotate-45 translate-y-[6px]" : ""
-                    }`}
-                  />
-                  <div
-                    className={`w-[30px] h-[2px] bg-white transition-all duration-300 ${
-                      menuState ? "opacity-0 scale-0" : ""
-                    }`}
-                  />
-                  <div
-                    className={`w-[30px] h-[2px] bg-white transition-all duration-300 ${
-                      menuState ? "-rotate-45 -translate-y-[6px]" : ""
-                    }`}
-                  />
-                </div>
-              </button>
+            <div className="lg:hidden flex justify-between items-center w-full px-6">
+              <div className="w-[80%]">
+                <Logo width={40} height={40} />
+              </div>
+              <div className=" ">
+                <button
+                  onClick={() => setMenuState(!menuState)}
+                  aria-label={menuState ? "Close Menu" : "Open Menu"}
+                  className="relative z-20 block cursor-pointer lg:hidden"
+                  data-state={menuState ? "active" : "inactive"}
+                  onMouseEnter={playHoverSound}
+                >
+                  <div className="flex flex-col gap-[4px]">
+                    <div
+                      className={`w-[30px] h-[2px] bg-white transition-all duration-300 ${
+                        menuState ? "rotate-45 translate-y-[6px]" : ""
+                      }`}
+                    />
+                    <div
+                      className={`w-[30px] h-[2px] bg-white transition-all duration-300 ${
+                        menuState ? "opacity-0 scale-0" : ""
+                      }`}
+                    />
+                    <div
+                      className={`w-[30px] h-[2px] bg-white transition-all duration-300 ${
+                        menuState ? "-rotate-45 -translate-y-[6px]" : ""
+                      }`}
+                    />
+                  </div>
+                </button>
+              </div>
             </div>
           </div>
         </div>

@@ -1,8 +1,14 @@
-export const Logo = () => (
+export const Logo = ({
+  width = 68,
+  height = 68,
+}: {
+  width?: number;
+  height?: number;
+}) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
-    width="68"
-    height="68"
+    width={width}
+    height={height}
     viewBox="0 0 68 68"
     fill="none"
   >
