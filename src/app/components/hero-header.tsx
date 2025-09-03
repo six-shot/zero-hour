@@ -4,6 +4,7 @@ import { usePathname } from "next/navigation";
 import React, { useState, useEffect } from "react";
 import { Button } from "./ui/button";
 import { Logo } from "./ui/icons";
+import { useSound } from "@/lib/useSound";
 
 const menuItems = [
   { name: "About", href: "/" },
@@ -16,6 +17,7 @@ export const HeroHeader = () => {
   const pathname = usePathname();
   const [isScrolled, setIsScrolled] = useState(false);
   const [menuState, setMenuState] = useState(false);
+  const playHoverSound = useSound("/menu-select.mp3");
 
   useEffect(() => {
     const handleScroll = () => {
@@ -62,6 +64,7 @@ export const HeroHeader = () => {
                           ? "text-[#ffffff]"
                           : "text-[#FFFFFF]"
                       }`}
+                      onMouseEnter={playHoverSound}
                     >
                       <span>{item.name}</span>
                     </Link>
@@ -81,6 +84,7 @@ export const HeroHeader = () => {
                           ? "text-[#ffffff]"
                           : "text-[#ffffff]"
                       }`}
+                      onMouseEnter={playHoverSound}
                     >
                       <span>{item.name}</span>
                     </Link>
@@ -142,13 +146,13 @@ export const HeroHeader = () => {
                         pathname === item.href ? "text-white" : "text-[#ffffff]"
                       }`}
                       onClick={() => setMenuState(false)}
+                      onMouseEnter={playHoverSound}
                     >
                       <span>{item.name}</span>
                     </Link>
                   </li>
                 ))}
               </ul>
-            
             </div>
           </div>
         </div>
