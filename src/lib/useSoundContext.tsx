@@ -97,8 +97,10 @@ export const SoundProvider = ({ children }: { children: React.ReactNode }) => {
         .play()
         .then(() => {
           addDebugInfo("Audio enabled successfully!");
-          audioRef.current.pause();
-          audioRef.current.currentTime = 0;
+          if (audioRef.current) {
+            audioRef.current.pause();
+            audioRef.current.currentTime = 0;
+          }
         })
         .catch((error) => {
           addDebugInfo(`Failed to enable audio: ${error.message}`);
