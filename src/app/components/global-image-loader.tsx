@@ -2,6 +2,7 @@
 import React, { useState, useEffect, ReactNode } from "react";
 import { preloadAllImages } from "../../lib/image-preloader";
 import Image from "next/image";
+import SVGProgressLoader from "./SVGProgressLoader";
 
 interface GlobalImageLoaderProps {
   children: ReactNode;
@@ -76,11 +77,9 @@ const GlobalImageLoader: React.FC<GlobalImageLoaderProps> = ({
           alt="loader-hero"
         />
 
-        <div className="flex justify-center items-center h-full relative z-10">
-          {/* Progress percentage with smooth animation */}
-          <div className="text-[#F45201] font-bold text-[60px] font-[family-name:var(--font-vt323)]">
-            {displayProgress}%
-          </div>
+        <div className="flex flex-col justify-center items-center h-full relative z-10">
+          {/* SVG Progress Loader with integrated percentage text */}
+          <SVGProgressLoader progress={displayProgress} />
         </div>
       </div>
     );

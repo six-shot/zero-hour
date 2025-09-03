@@ -30,13 +30,17 @@ export default function CTA2() {
             Ready to make <br />
             the leap?
           </h3>
+
           <div className="flex items-start gap-2 sm:gap-3 lg:gap-4 mt-4 sm:mt-6 lg:mt-[18px]">
             <CTACircle />
             <p className="text-[18px] sm:text-[28px] lg:text-[38px] leading-[18px] sm:leading-[28px] lg:leading-[38px] font-[family-name:var(--font-vt323)] mt-1 sm:mt-1.5 lg:mt-2">
               The clock is ticking. ZeroHour is here to{" "}
-              <br className="hidden sm:block" /> transform your brand&apos;s future
-              in Web3.
+              <br className="hidden sm:block" /> transform your brand&apos;s
+              future in Web3.
             </p>
+          </div>
+          <div className="mt-6 sm:mt-8 lg:mt-[35px] flex justify-end items-end w-full px-[70px]">
+            <Button>Book A Session</Button>
           </div>
         </div>
       </div>

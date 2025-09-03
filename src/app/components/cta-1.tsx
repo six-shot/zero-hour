@@ -3,7 +3,7 @@ import { Button } from "./ui/button";
 
 export default function CTA1() {
   return (
-    <div className="bg-black relative py-8">
+    <div className="bg-black relative pt-8 pb-[80px]">
       <div
         className="w-full h-full absolute inset-0 z-10"
         style={{
@@ -13,7 +13,7 @@ export default function CTA1() {
         }}
       />
       <div className="max-w-[1440px] mx-auto relative z-100 px-4 sm:px-6 lg:px-0">
-        <div className="border-[0.5px] border-[#ffffff64] py-8 px-6 sm:py-12 sm:px-8 lg:py-[55px] lg:px-[63px] rounded-[19px] flex flex-col items-start">
+        <div className="border-[0.5px] border-[#ffffff64] py-8 px-6 sm:py-12 h-[477px] sm:px-8 lg:py-[55px] lg:px-[63px] rounded-[19px] flex flex-col items-start">
           <h3 className="text-3xl sm:text-4xl md:text-5xl lg:text-[64px] leading-tight sm:leading-tight md:leading-tight lg:leading-[64px] font-[family-name:var(--font-sentex)]">
             Ready to Transform <br />
             Your IP?

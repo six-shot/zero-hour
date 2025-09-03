@@ -54,7 +54,7 @@ export default function FrequentlyAskedQuestions() {
       <div className="relative z-10">
         <div className="max-w-[1440px] mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-[11px] items-center">
-            <div className="w-full h-[300px] sm:h-[400px] md:h-[500px] lg:h-[657px] border-[0.5px] border-[#B7B4B4] relative order-1 lg:order-1">
+            <div className="w-full h-[300px] sm:h-[400px] md:h-[500px] lg:h-[657px] border-[0.5px] border-[#B7B4B4] bg-black relative order-1 lg:order-1">
               <Image
                 src="/faq.svg"
                 className="w-full h-full mix"
