@@ -73,11 +73,10 @@ export default function HeroSection() {
             </div>
             <div
               style={{
-                width: "284px",
-                height: "170px",
+              
                 backgroundColor: "rgba(58, 58, 58, 0.16)",
               }}
-              className="flex flex-col gap-[14px] pt-[37px] items-center rounded-[7.1px] w-[240px] md:w-[284px] h-[140px] md:h-[170px]"
+              className="md:w-[284px] w-[240px] md:h-[170px] h-[199px] flex flex-col gap-[14px] pt-[37px] items-center rounded-[7.1px] "
             >
               <h1 className="text-white text-[48px] md:text-[61px] leading-[48px] md:leading-[61px] font-[family-name:var(--font-vt323)] text-center uppercase">
                 $2.4B

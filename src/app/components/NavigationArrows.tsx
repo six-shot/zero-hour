@@ -32,7 +32,7 @@ export function LeftArrow({
       disabled={disabled}
       className={cn(
         "cursor-pointer select-none",
-        disabled && "opacity-50 cursor-not-allowed",
+        disabled && "cursor-not-allowed",
         !disabled && "hover:opacity-80",
         className
       )}
@@ -42,7 +42,7 @@ export function LeftArrow({
       whileTap={!disabled ? { scale: 0.95 } : {}}
       transition={{ duration: 0.1 }}
     >
-      <PrevButton />
+      <PrevButton color={disabled ? "#635E67" : "white"} />
     </motion.button>
   );
 }
@@ -68,7 +68,7 @@ export function RightArrow({
       disabled={disabled}
       className={cn(
         "cursor-pointer select-none",
-        disabled && "opacity-50 cursor-not-allowed",
+        disabled && "cursor-not-allowed",
         !disabled && "hover:opacity-80",
         className
       )}
@@ -78,7 +78,7 @@ export function RightArrow({
       whileTap={!disabled ? { scale: 0.95 } : {}}
       transition={{ duration: 0.1 }}
     >
-      <NextButton />
+      <NextButton color={disabled ? "#635E67" : "white"} />
     </motion.button>
   );
 }

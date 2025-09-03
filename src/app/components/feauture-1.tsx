@@ -122,7 +122,7 @@ export default function Feauture1() {
   };
 
   return (
-    <div className="pt-[181px] w-full relative">
+    <div className="pt-[60px] sm:pt-[100px] lg:pt-[181px] w-full relative px-4 sm:px-6 lg:px-0">
       <div
         className="w-full h-full absolute inset-0 z-10"
         style={{
@@ -131,25 +131,25 @@ export default function Feauture1() {
           backgroundSize: "auto",
         }}
       />
-      <div className="max-w-[1440px] mx-auto ">
+      <div className="max-w-[1440px] mx-auto">
         <div className="flex flex-col items-start">
-          <h4 className="text-[38px] leading-[38px] font-[family-name:var(--font-sentex)] text-white uppercase">
+          <h4 className="text-[24px] leading-[28px] sm:text-[32px] sm:leading-[36px] lg:text-[38px] lg:leading-[38px] font-[family-name:var(--font-sentex)] text-white uppercase">
             Zero Hours Wasted
           </h4>
-          <p className="text-[28px] leading-[28px] font-[family-name:var(--font-vt323)] text-white uppercase mt-[23px]">
+          <p className="text-[16px] leading-[20px] sm:text-[20px] sm:leading-[24px] lg:text-[28px] lg:leading-[28px] font-[family-name:var(--font-vt323)] text-white uppercase mt-[16px] sm:mt-[20px] lg:mt-[23px]">
             Our systems analyze, deconstruct, and surge your web-2 assets into
-            thriving web-3 <br /> ecosystems. Every transformation is
-            strategically engineered for maximum impact.
-          </p>{" "}
-          <div className="flex justify-between items-center w-full">
-            <div className="px-2.5 h-[37px] border border-[#4D4D4D] rounded-[9px] flex justify-between items-center mt-[31px]">
-              <div className="px-2 flex items-center gap-[2px] text-[17px] text-white font-[family-name:var(--font-vt323)] uppercase ">
+            thriving web-3 <br className="hidden sm:block" /> ecosystems. Every
+            transformation is strategically engineered for maximum impact.
+          </p>
+          <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center w-full gap-4 sm:gap-0">
+            <div className="px-2.5 h-[32px] sm:h-[37px] border border-[#4D4D4D] rounded-[9px] flex justify-between items-center mt-[20px] sm:mt-[31px]">
+              <div className="px-2 flex items-center gap-[2px] text-[14px] sm:text-[17px] text-white font-[family-name:var(--font-vt323)] uppercase">
                 <span>Web2</span>
                 <ArrowRight />
                 <span>Web3 Transformation</span>
               </div>
             </div>
-            <div className=" relative z-[1000]">
+            <div className="relative z-[100] mt-4 sm:mt-0">
               <NavigationArrows
                 onPrevious={handlePrevious}
                 onNext={handleNext}
@@ -161,7 +161,7 @@ export default function Feauture1() {
         </div>
       </div>
 
-      <div className="mt-[105px]  py-5 w-full relative z-[100]">
+      <div className="mt-[60px] sm:mt-[80px] lg:mt-[105px] py-5 w-full relative z-[100]">
         <AutoSlider
           cards={featureCards}
           ref={sliderRef}
