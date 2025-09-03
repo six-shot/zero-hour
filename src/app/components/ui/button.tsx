@@ -9,7 +9,7 @@ const buttonVariants = cva(
     variants: {
       variant: {
         default:
-          "relative m-[5px] pl-[45px] pr-[44px] h-[50px] bg-white/20 text-[18px] text-white font-[family-name:var(--font-vt323)] capitalize flex items-center hover:bg-white/30 transition-colors",
+          "relative m-[5px] md:pl-[45px] pl-[20px] md:pr-[44px] pr-[20px] md:h-[50px] h-[40px] bg-white/20 text-[18px] text-white font-[family-name:var(--font-vt323)] capitalize flex items-center hover:bg-white/30 transition-colors",
         primary:
           "pr text-white bg-primary hover:bg-primary/90 relative overflow-hidden before:content-[''] before:absolute before:inset-y-0 before:left-[-60%] before:w-[60%] before:bg-gradient-to-r  before:from-white/40 before:via-white/10 before:to-transparent before:opacity-0 hover:before:opacity-100 before:transition-all before:duration-500 hover:before:left-[110%]",
         destructive:
