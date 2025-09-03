@@ -79,26 +79,28 @@ const testimonialCards = testimonialData.map((testimonial, index) => (
     </svg>
 
     {/* Content */}
-    <div className="absolute inset-0 p-8 flex flex-col items-start text-white z-20">
+    <div className="absolute inset-0 p-8 flex flex-col items-start justify-between text-white z-20">
       {/* Quote Icon */}
       <Image width={66} height={78} src="quote.svg" alt="quote" />
 
       {/* Testimonial Text */}
-      <p className="text-[#c5c5c5] text-[28px] text-left leading-[28px] font-[family-name:var(--font-vt323)] mt-6 mb-8 flex-1">
-        {testimonial.description}
-      </p>
+      <div className="flex flex-col gap-[31px]">
+        <p className="text-[#c5c5c5] text-[28px] text-left leading-[28px] font-[family-name:var(--font-vt323)] mt-6 mb-8 flex-1">
+          {testimonial.description}
+        </p>
 
-      <div className="mb-4 flex gap-[15px] items-center">
-        <img
-          src={testimonial.userImage}
-          alt={testimonial.title}
-          width={80}
-          height={80}
-          className="rounded-full object-cover"
-        />
-        <h3 className="font-[family-name:var(--font-sentex)] text-[24px] leading-[24px] uppercase text-center">
-          {testimonial.title}
-        </h3>
+        <div className="mb-4 flex gap-[15px] items-center">
+          <img
+            src={testimonial.userImage}
+            alt={testimonial.title}
+            width={80}
+            height={80}
+            className="rounded-full object-cover"
+          />
+          <h3 className="font-[family-name:var(--font-vt323)] text-[38px] leading-[38px] uppercase text-center">
+            {testimonial.title}
+          </h3>
+        </div>
       </div>
     </div>
   </div>
