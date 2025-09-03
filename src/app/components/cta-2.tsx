@@ -34,7 +34,7 @@ export default function CTA2() {
             <CTACircle />
             <p className="text-[18px] sm:text-[28px] lg:text-[38px] leading-[18px] sm:leading-[28px] lg:leading-[38px] font-[family-name:var(--font-vt323)] mt-1 sm:mt-1.5 lg:mt-2">
               The clock is ticking. ZeroHour is here to{" "}
-              <br className="hidden sm:block" /> transform your brand's future
+              <br className="hidden sm:block" /> transform your brand&apos;s future
               in Web3.
             </p>
           </div>

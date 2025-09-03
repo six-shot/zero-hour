@@ -82,9 +82,9 @@ const testimonialCards = testimonialData.map((testimonial, index) => (
       </svg>
 
       {/* Content */}
-      <div className="absolute inset-0 p-4 md:p-8 flex flex-col items-start justify-between text-white z-20">
+      <div className="absolute inset-0 p-4 md:p-8 flex flex-col items-start justify-between h-full text-white z-20">
         {/* Quote Icon */}
-        <div className="flex-shrink-0">
+        <div className=" flex-shrink-0">
           <Image
             width={66}
             height={78}
@@ -95,12 +95,12 @@ const testimonialCards = testimonialData.map((testimonial, index) => (
         </div>
 
         {/* Testimonial Text */}
-        <div className="flex flex-col gap-4 md:gap-[31px] flex-1 justify-between min-h-0 w-full">
-          <p className="text-[#c5c5c5] text-lg md:text-[28px] text-left leading-5 md:leading-[28px] font-[family-name:var(--font-vt323)] flex-1 overflow-hidden">
+        <div className="flex flex-col gap-4 w-full">
+          <p className="text-[#c5c5c5] text-lg md:text-[28px] text-left leading-5 md:leading-[28px] font-[family-name:var(--font-vt323)] ">
             {testimonial.description}
           </p>
 
-          <div className="flex-shrink-0 flex gap-3 md:gap-[15px] items-center">
+          <div className=" flex gap-3 md:gap-[15px] items-center">
             <img
               src={testimonial.userImage}
               alt={testimonial.title}
@@ -113,6 +113,8 @@ const testimonialCards = testimonialData.map((testimonial, index) => (
             </h3>
           </div>
         </div>
+
+
       </div>
     </div>
   </div>
