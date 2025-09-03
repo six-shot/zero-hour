@@ -8,10 +8,13 @@ import Footer from "./components/footer";
 import FrequentlyAskedQuestions from "./components/FAQ";
 import Testimonial from "./testimonila";
 import Image from "next/image";
+import GlobalImageLoader from "./components/global-image-loader";
 
 export default function Home() {
   return (
     <div>
+     
+
       <HeroSection />
       <Feauture1 />
       <Feauture2 />
