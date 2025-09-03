@@ -1,5 +1,6 @@
 "use client";
 import React, { useRef, useState } from "react";
+import { motion, useInView } from "framer-motion";
 import { AutoSlider, AutoSliderRef } from "./AutoSlider";
 import { NavigationArrows } from "./NavigationArrows";
 import { ReusableCard } from "./ReusableCard";
@@ -51,6 +52,29 @@ export default function Feauture3() {
   const [canGoPrevious, setCanGoPrevious] = useState(false);
   const [canGoNext, setCanGoNext] = useState(true);
 
+  // Refs for scroll animations
+  const badgeRef = useRef(null);
+  const headingRef = useRef(null);
+  const descriptionRef = useRef(null);
+  const navigationRef = useRef(null);
+  const sliderRef_anim = useRef(null);
+
+  // InView hooks
+  const badgeInView = useInView(badgeRef, { once: true, margin: "-100px" });
+  const headingInView = useInView(headingRef, { once: true, margin: "-100px" });
+  const descriptionInView = useInView(descriptionRef, {
+    once: true,
+    margin: "-100px",
+  });
+  const navigationInView = useInView(navigationRef, {
+    once: true,
+    margin: "-100px",
+  });
+  const sliderInView = useInView(sliderRef_anim, {
+    once: true,
+    margin: "-100px",
+  });
+
   const handleNavigationChange = (canGoPrev: boolean, canGoNxt: boolean) => {
     setCanGoPrevious(canGoPrev);
     setCanGoNext(canGoNxt);
@@ -65,7 +89,15 @@ export default function Feauture3() {
   };
 
   return (
-    <div className="pt-[60px] pb-[60px] md:pt-[98px] md:pb-[102px] bg-black relative">
+    <motion.div
+      className="pt-[60px] pb-[60px] md:pt-[98px] md:pb-[102px] bg-black relative"
+      initial={{ opacity: 0, y: 50 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{
+        duration: 0.8,
+        ease: "easeOut",
+      }}
+    >
       <div
         className="w-full h-full absolute inset-0 z-10"
         style={{
@@ -84,21 +116,82 @@ export default function Feauture3() {
       />
       <div className="max-w-[1440px] mx-auto relative z-[1000] px-4 md:px-0">
         <div className="flex flex-col items-center">
-          <div className="px-2.5 h-[23px] border border-[#4D4D4D] rounded-[9px] flex items-center mb-[22px]">
+          <motion.div
+            ref={badgeRef}
+            className="px-2.5 h-[23px] border border-[#4D4D4D] rounded-[9px] flex items-center mb-[22px]"
+            initial={{ opacity: 0, y: 30 }}
+            animate={badgeInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+            transition={{
+              duration: 0.8,
+              ease: "easeOut",
+            }}
+            whileHover={{
+              scale: 1.05,
+              borderColor: "#666666",
+              boxShadow: "0 0 20px rgba(77, 77, 77, 0.3)",
+            }}
+          >
             <div className="px-2 flex items-center gap-[2px] text-[14px] md:text-[17px] text-white font-[family-name:var(--font-vt323)] uppercase ">
               <span>Success protocol</span>
             </div>
-          </div>
-          <h4 className="text-[24px] md:text-[38px] leading-[24px] md:leading-[38px] font-[family-name:var(--font-sentex)] text-white uppercase text-center px-4">
+          </motion.div>
+          <motion.h4
+            ref={headingRef}
+            className="text-[24px] md:text-[38px] leading-[24px] md:leading-[38px] font-[family-name:var(--font-sentex)] text-white uppercase text-center px-4"
+            initial={{ opacity: 0, y: 50 }}
+            animate={
+              headingInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }
+            }
+            transition={{
+              duration: 0.8,
+              delay: 0.2,
+              ease: "easeOut",
+            }}
+            whileHover={{
+              scale: 1.02,
+              textShadow: "0 0 20px rgba(255, 255, 255, 0.3)",
+            }}
+          >
             ZEROhoURS VICTORIES
-          </h4>
-          <p className="text-[16px] md:text-[28px] leading-[20px] md:leading-[28px] font-[family-name:var(--font-vt323)] text-white uppercase mt-[17px] text-center px-4">
+          </motion.h4>
+          <motion.p
+            ref={descriptionRef}
+            className="text-[16px] md:text-[28px] leading-[20px] md:leading-[28px] font-[family-name:var(--font-vt323)] text-white uppercase mt-[17px] text-center px-4"
+            initial={{ opacity: 0, y: 30 }}
+            animate={
+              descriptionInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }
+            }
+            transition={{
+              duration: 0.8,
+              delay: 0.4,
+              ease: "easeOut",
+            }}
+            whileHover={{
+              scale: 1.01,
+              color: "#f0f0f0",
+            }}
+          >
             Witness the transformation. These IPs didn&apos;t just survive the
             Web3 transition—
             <br className="hidden md:block" /> they evolved into something more
             powerful than their creators ever imagined.
-          </p>
-          <div className="flex justify-end items-center w-full my-[31px] px-4 md:px-0">
+          </motion.p>
+          <motion.div
+            ref={navigationRef}
+            className="flex justify-end items-center w-full my-[31px] px-4 md:px-0"
+            initial={{ opacity: 0, x: 30 }}
+            animate={
+              navigationInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 30 }
+            }
+            transition={{
+              duration: 0.8,
+              delay: 0.6,
+              ease: "easeOut",
+            }}
+            whileHover={{
+              scale: 1.05,
+            }}
+          >
             <div className="relative z-[1000]">
               <NavigationArrows
                 onPrevious={handlePrevious}
@@ -107,16 +200,26 @@ export default function Feauture3() {
                 canGoNext={canGoNext}
               />
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
-      <div className="w-full relative overflow-hidden z-[1000]">
+      <motion.div
+        ref={sliderRef_anim}
+        className="w-full relative overflow-hidden z-[1000]"
+        initial={{ opacity: 0, y: 50 }}
+        animate={sliderInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
+        transition={{
+          duration: 0.8,
+          delay: 0.8,
+          ease: "easeOut",
+        }}
+      >
         <AutoSlider
           cards={victoryCards}
           ref={sliderRef}
           onNavigationChange={handleNavigationChange}
         />
-      </div>
-    </div>
+      </motion.div>
+    </motion.div>
   );
 }
