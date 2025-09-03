@@ -12,36 +12,42 @@ const testimonialData = [
     description:
       "Zero Hour has revolutionized how we approach decentralized finance. The platform's intuitive interface and robust security features make it the perfect solution for both beginners and experts.",
     image: "/1.svg",
+    userImage: "/user-1.svg",
   },
   {
     title: "MICHAEL RODRIGUEZ",
     description:
       "The transparency and efficiency of Zero Hour's tokenization process is unmatched. We've seen incredible results since implementing their RWA solutions in our portfolio.",
     image: "/2.svg",
+    userImage: "/user-1.svg",
   },
   {
     title: "EMILY WATSON",
     description:
       "As a financial advisor, I trust Zero Hour to provide my clients with secure, compliant access to tokenized real-world assets. The platform delivers on its promises.",
     image: "/3.svg",
+    userImage: "/user-1.svg",
   },
   {
     title: "DAVID KIM",
     description:
       "Zero Hour's innovative approach to RWA tokenization has opened up new investment opportunities that were previously inaccessible to retail investors.",
     image: "/33.svg",
+    userImage: "/user-1.svg",
   },
   {
     title: "LISA THOMPSON",
     description:
       "The team behind Zero Hour understands the complexities of both traditional finance and blockchain technology. Their platform bridges the gap perfectly.",
     image: "/1.svg",
+    userImage: "/user-1.svg",
   },
   {
     title: "JAMES WILSON",
     description:
       "Zero Hour has made it possible for us to diversify our portfolio with real-world assets while maintaining the benefits of blockchain technology.",
     image: "/2.svg",
+    userImage: "/user-1.svg",
   },
 ];
 
@@ -82,21 +88,18 @@ const testimonialCards = testimonialData.map((testimonial, index) => (
         {testimonial.description}
       </p>
 
-      {/* User Image */}
-      {/* <div className="mb-4">
+      <div className="mb-4 flex gap-[15px] items-center">
         <img
-          src={testimonial.image}
+          src={testimonial.userImage}
           alt={testimonial.title}
           width={80}
           height={80}
           className="rounded-full object-cover"
         />
-      </div> */}
-
-      {/* User Name */}
-      {/* <h3 className="font-[family-name:var(--font-sentex)] text-[24px] leading-[24px] uppercase text-center">
-        {testimonial.title}
-      </h3> */}
+        <h3 className="font-[family-name:var(--font-sentex)] text-[24px] leading-[24px] uppercase text-center">
+          {testimonial.title}
+        </h3>
+      </div>
     </div>
   </div>
 ));
