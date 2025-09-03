@@ -12,6 +12,7 @@ interface SoundContextType {
   playSound: () => void;
   isAudioEnabled: boolean;
   debugInfo: string[];
+  enableAudio: () => void;
 }
 
 const SoundContext = createContext<SoundContextType | null>(null);
@@ -49,42 +50,7 @@ export const SoundProvider = ({ children }: { children: React.ReactNode }) => {
         addDebugInfo("Audio data loaded")
       );
 
-      // Enable audio after first user interaction
-      const enableAudio = () => {
-        addDebugInfo("User interaction detected - enabling audio");
-        setIsAudioEnabled(true);
-
-        // Try to play and immediately pause to unlock audio context
-        audio
-          .play()
-          .then(() => {
-            addDebugInfo("Audio context unlocked successfully");
-            audio.pause();
-            audio.currentTime = 0;
-          })
-          .catch((error) => {
-            addDebugInfo(`Failed to unlock audio context: ${error.message}`);
-          });
-
-        // Remove listeners after first interaction
-        document.removeEventListener("click", enableAudio);
-        document.removeEventListener("touchstart", enableAudio);
-        document.removeEventListener("keydown", enableAudio);
-      };
-
-      // Listen for user interactions to enable audio
-      document.addEventListener("click", enableAudio, { once: true });
-      document.addEventListener("touchstart", enableAudio, { once: true });
-      document.addEventListener("keydown", enableAudio, { once: true });
-
-      addDebugInfo("Event listeners added for user interaction");
-
-      return () => {
-        document.removeEventListener("click", enableAudio);
-        document.removeEventListener("touchstart", enableAudio);
-        document.removeEventListener("keydown", enableAudio);
-        addDebugInfo("Cleanup: Event listeners removed");
-      };
+      addDebugInfo("Audio initialized - will unlock on first hover");
     } catch (error) {
       addDebugInfo(`Failed to initialize audio: ${error}`);
     }
@@ -95,18 +61,17 @@ export const SoundProvider = ({ children }: { children: React.ReactNode }) => {
       `playSound called - isAudioEnabled: ${isAudioEnabled}, audioRef: ${!!audioRef.current}`
     );
 
-    if (!isAudioEnabled) {
-      addDebugInfo("Audio not enabled yet - user needs to interact first");
-      return;
-    }
-
     if (!audioRef.current) {
       addDebugInfo("Audio ref is null");
       return;
     }
 
+    if (!isAudioEnabled) {
+      addDebugInfo("Audio not enabled - user needs to click enable button");
+      return;
+    }
+
     try {
-      // Reset audio to beginning and play
       audioRef.current.currentTime = 0;
       addDebugInfo("Attempting to play audio...");
 
@@ -123,8 +88,28 @@ export const SoundProvider = ({ children }: { children: React.ReactNode }) => {
     }
   }, [isAudioEnabled]);
 
+  const enableAudio = useCallback(() => {
+    addDebugInfo("Manual audio enable requested");
+    setIsAudioEnabled(true);
+
+    if (audioRef.current) {
+      audioRef.current
+        .play()
+        .then(() => {
+          addDebugInfo("Audio enabled successfully!");
+          audioRef.current.pause();
+          audioRef.current.currentTime = 0;
+        })
+        .catch((error) => {
+          addDebugInfo(`Failed to enable audio: ${error.message}`);
+        });
+    }
+  }, []);
+
   return (
-    <SoundContext.Provider value={{ playSound, isAudioEnabled, debugInfo }}>
+    <SoundContext.Provider
+      value={{ playSound, isAudioEnabled, debugInfo, enableAudio }}
+    >
       {children}
     </SoundContext.Provider>
   );
