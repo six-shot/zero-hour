@@ -4,7 +4,7 @@ import { usePathname } from "next/navigation";
 import React, { useState, useEffect } from "react";
 import { Button } from "./ui/button";
 import { Logo } from "./ui/icons";
-import { useSound } from "@/lib/useSound";
+import { useSound } from "@/lib/useSoundContext";
 import { ShufflingText } from "./ShufflingText";
 
 const menuItems = [
@@ -18,7 +18,12 @@ export const HeroHeader = () => {
   const pathname = usePathname();
   const [isScrolled, setIsScrolled] = useState(false);
   const [menuState, setMenuState] = useState(false);
-  const playHoverSound = useSound("/menu-select.mp3");
+  const { playSound: playHoverSound } = useSound();
+
+  const handleHoverSound = () => {
+    console.log("Hover sound triggered!");
+    playHoverSound();
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -37,7 +42,7 @@ export const HeroHeader = () => {
           isScrolled ? "bg-black/20 backdrop-blur-md " : "bg-transaparent"
         }`}
       >
-        <div className="transition-all duration-300 flex justify-between  w-full max-w-[1440px] mx-auto relative h-full w-full">
+        <div className="transition-all duration-300 flex justify-between w-full max-w-[1440px] mx-auto relative h-full">
           <div className="absolute top-0 left-0 w-[3px] h-[15px] bg-[#EAEAEA]"></div>
           <div className="absolute top-0 left-0 w-[15px] h-[3px] bg-[#EAEAEA]"></div>
           {/* Top-right corner */}
@@ -65,7 +70,7 @@ export const HeroHeader = () => {
                           ? "text-[#ffffff]"
                           : "text-[#FFFFFF]"
                       }`}
-                      onMouseEnter={playHoverSound}
+                      onMouseEnter={handleHoverSound}
                     >
                       <ShufflingText
                         text={item.name}
@@ -90,7 +95,7 @@ export const HeroHeader = () => {
                           ? "text-[#ffffff]"
                           : "text-[#ffffff]"
                       }`}
-                      onMouseEnter={playHoverSound}
+                      onMouseEnter={handleHoverSound}
                     >
                       <ShufflingText
                         text={item.name}
@@ -115,7 +120,7 @@ export const HeroHeader = () => {
                   aria-label={menuState ? "Close Menu" : "Open Menu"}
                   className="relative z-20 block cursor-pointer lg:hidden"
                   data-state={menuState ? "active" : "inactive"}
-                  onMouseEnter={playHoverSound}
+                  onMouseEnter={handleHoverSound}
                 >
                   <div className="flex flex-col gap-[4px]">
                     <div
@@ -163,7 +168,7 @@ export const HeroHeader = () => {
                         pathname === item.href ? "text-white" : "text-[#ffffff]"
                       }`}
                       onClick={() => setMenuState(false)}
-                      onMouseEnter={playHoverSound}
+                      onMouseEnter={handleHoverSound}
                     >
                       <ShufflingText
                         text={item.name}

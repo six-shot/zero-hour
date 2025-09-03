@@ -1,6 +1,22 @@
-import { useCallback, useEffect, useRef, useState } from "react";
+"use client";
+import React, {
+  createContext,
+  useContext,
+  useCallback,
+  useEffect,
+  useRef,
+  useState,
+} from "react";
 
-export const useSound = (soundPath: string) => {
+interface SoundContextType {
+  playSound: () => void;
+  isAudioEnabled: boolean;
+  debugInfo: string[];
+}
+
+const SoundContext = createContext<SoundContextType | null>(null);
+
+export const SoundProvider = ({ children }: { children: React.ReactNode }) => {
   const [isAudioEnabled, setIsAudioEnabled] = useState(false);
   const [debugInfo, setDebugInfo] = useState<string[]>([]);
   const audioRef = useRef<HTMLAudioElement | null>(null);
@@ -13,14 +29,14 @@ export const useSound = (soundPath: string) => {
     ]);
   };
 
-  // Preload the audio file
+  // Initialize audio once
   useEffect(() => {
-    addDebugInfo(`Initializing sound: ${soundPath}`);
+    addDebugInfo(`Initializing shared sound: /menu-select.mp3`);
 
     try {
-      const audio = new Audio(soundPath);
+      const audio = new Audio("/menu-select.mp3");
       audio.preload = "auto";
-      audio.volume = 0.8; // Higher volume for testing
+      audio.volume = 0.8;
       audioRef.current = audio;
 
       // Add event listeners for debugging
@@ -72,7 +88,7 @@ export const useSound = (soundPath: string) => {
     } catch (error) {
       addDebugInfo(`Failed to initialize audio: ${error}`);
     }
-  }, [soundPath]);
+  }, []);
 
   const playSound = useCallback(() => {
     addDebugInfo(
@@ -107,5 +123,17 @@ export const useSound = (soundPath: string) => {
     }
   }, [isAudioEnabled]);
 
-  return { playSound, debugInfo, isAudioEnabled };
+  return (
+    <SoundContext.Provider value={{ playSound, isAudioEnabled, debugInfo }}>
+      {children}
+    </SoundContext.Provider>
+  );
+};
+
+export const useSound = () => {
+  const context = useContext(SoundContext);
+  if (!context) {
+    throw new Error("useSound must be used within a SoundProvider");
+  }
+  return context;
 };

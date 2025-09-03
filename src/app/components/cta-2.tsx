@@ -4,10 +4,10 @@ import { Button } from "./ui/button";
 import Image from "next/image";
 import { CTACircle } from "./ui/icons";
 import Footer from "./footer";
-import { useSound } from "@/lib/useSound";
+import { useSound } from "@/lib/useSoundContext";
 
 export default function CTA2() {
-  const playHoverSound = useSound("/menu-select.mp3");
+  const { playSound: playHoverSound } = useSound();
 
   return (
     <div className="relative py-4 sm:py-6 lg:py-8">

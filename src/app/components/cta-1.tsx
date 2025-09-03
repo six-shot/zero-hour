@@ -1,10 +1,10 @@
 "use client";
 import React from "react";
 import { Button } from "./ui/button";
-import { useSound } from "@/lib/useSound";
+import { useSound } from "@/lib/useSoundContext";
 
 export default function CTA1() {
-  const playHoverSound = useSound("/menu-select.mp3");
+  const { playSound: playHoverSound } = useSound();
 
   return (
     <div className="bg-black relative pt-8 pb-[80px]">

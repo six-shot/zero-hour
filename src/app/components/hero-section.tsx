@@ -4,10 +4,10 @@ import React from "react";
 import { HeroHeader } from "./hero-header";
 import { ArrowRight, Circle, Pluses } from "./ui/icons";
 import { Button } from "./ui/button";
-import { useSound } from "@/lib/useSound";
+import { useSound } from "@/lib/useSoundContext";
 
 export default function HeroSection() {
-  const playHoverSound = useSound("/menu-select.mp3");
+  const { playSound: playHoverSound } = useSound();
 
   return (
     <div className=" relative">
