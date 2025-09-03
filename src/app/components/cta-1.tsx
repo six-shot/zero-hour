@@ -13,7 +13,7 @@ export default function CTA1() {
         }}
       />
       <div className="max-w-[1440px] mx-auto relative z-100">
-        <div className=" border-[0.5px] border-white py-[55px] px-[63px] rounded-[19px] flex flex-col items-start">
+        <div className=" border-[0.5px] border-[#ffffff64] py-[55px] px-[63px] rounded-[19px] flex flex-col items-start">
           <h3 className="text-[64px] leading-[64px] font-[family-name:var(--font-sentex)]">
             Ready to Transform <br />
             Your IP?

@@ -7,6 +7,7 @@ import CTA2 from "./components/cta-2";
 import Footer from "./components/footer";
 import FrequentlyAskedQuestions from "./components/FAQ";
 import Testimonial from "./testimonila";
+import Image from "next/image";
 
 export default function Home() {
   return (
@@ -16,9 +17,10 @@ export default function Home() {
       <Feauture2 />
       <Feauture3 />
       <CTA1 />
-      <Testimonial/>
-      <FrequentlyAskedQuestions/>
+      <Testimonial />
+      <FrequentlyAskedQuestions />
       <CTA2 />
+   
     </div>
   );
 }

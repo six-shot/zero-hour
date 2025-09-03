@@ -4,6 +4,7 @@ import { ArrowRight } from "./ui/icons";
 import { AutoSlider, AutoSliderRef } from "./AutoSlider";
 import { NavigationArrows } from "./NavigationArrows";
 import { ReusableCard } from "./ReusableCard";
+import Image from "next/image";
 
 // Card data - converted to ReactNode array for AutoSlider
 const featureCardsData = [
@@ -158,7 +159,8 @@ export default function Feauture1() {
           </div>
         </div>
       </div>
-      <div className="mt-[105px] w-full relative z-[100]  overflow-hidden">
+   
+      <div className="mt-[105px]  py-5 w-full relative z-[100]">
         <AutoSlider
           cards={featureCards}
           ref={sliderRef}
