@@ -219,7 +219,6 @@ export const CTACircle = () => (
   </svg>
 );
 
-
 export const FooterCircle = () => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
@@ -238,5 +237,67 @@ export const FooterCircle = () => (
       />
       <circle cx="16.4885" cy="17.2462" r="6.64463" fill="white" />
     </g>
+  </svg>
+);
+
+export const StarOne = () => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="17"
+    height="15"
+    viewBox="0 0 17 15"
+    fill="none"
+  >
+    <path d="M0 6.5H8V15" stroke="white" />
+    <path d="M16.5 8.5L8.5 8.5L8.5 -6.99382e-07" stroke="white" />
+  </svg>
+);
+
+export const StarTwo = () => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="16"
+    height="17"
+    viewBox="0 0 16 17"
+    fill="none"
+  >
+    <path d="M8.5 0L8.5 8L-3.49691e-07 8" stroke="white" />
+    <path d="M7.5 16.5L7.5 8.5L16 8.5" stroke="white" />
+  </svg>
+);
+
+export const StarThree = () => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="17"
+    height="12"
+    viewBox="0 0 17 12"
+    fill="none"
+  >
+    <path d="M0 3.5H8V12" stroke="white" />
+    <path d="M16.5 8.5L8.5 8.5L8.5 -6.99382e-07" stroke="white" />
+  </svg>
+);
+
+export const StarFour = () => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="67"
+    height="73"
+    viewBox="0 0 67 73"
+    fill="none"
+  >
+    <path
+      d="M20.4648 46.2712L15.5043 53.1957L19.2903 10.2471C20.4948 13.2196 22.9564 19.0914 23.1664 18.7983C23.3764 18.5051 21.4528 36.9914 20.4648 46.2712Z"
+      fill="#635E67"
+    />
+    <path
+      d="M48.9241 33.3712L57.4012 34.2048L22.6065 8.74389C24.0481 11.609 26.8415 17.3304 26.4826 17.2951C26.1238 17.2598 41.2941 27.9978 48.9241 33.3712Z"
+      fill="#635E67"
+    />
+    <path
+      d="M23.2276 47.4932L18.2671 54.4178L57.7142 37.0152C54.5122 36.831 48.1606 36.3895 48.3706 36.0964C48.5806 35.8032 31.6961 43.5721 23.2276 47.4932Z"
+      fill="#635E67"
+    />
   </svg>
 );

@@ -13,13 +13,13 @@ export default function Home() {
   return (
     <div>
       <HeroSection />
-      <Feauture1 />
+      {/* <Feauture1 />
       <Feauture2 />
       <Feauture3 />
       <CTA1 />
       <Testimonial />
       <FrequentlyAskedQuestions />
-      <CTA2 />
+      <CTA2 /> */}
    
     </div>
   );

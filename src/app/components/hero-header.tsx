@@ -3,7 +3,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import React, { useState, useEffect } from "react";
 import { Button } from "./ui/button";
-import {  Logo } from "./ui/icons";
+import { Logo } from "./ui/icons";
 
 const menuItems = [
   { name: "About", href: "/" },
@@ -30,7 +30,7 @@ export const HeroHeader = () => {
   return (
     <header className="flex justify-center ">
       <nav
-        className={`fixed flex items-center w-full z-[10000] h-[60px] transition-all duration-300   font-[family-name:var(--font-vt323)] max-w-[1440px] mx-auto ${
+        className={`fixed flex items-center w-full z-[10000] h-[60px] transition-all duration-300   font-[family-name:var(--font-vt323)] md:px-[60px] px-5 ${
           isScrolled ? "bg-black/20 backdrop-blur-md " : "bg-transaparent"
         }`}
       >
@@ -90,42 +90,44 @@ export const HeroHeader = () => {
             </div>
 
             {/* Mobile Menu Button */}
-            <button
-              onClick={() => setMenuState(!menuState)}
-              aria-label={menuState ? "Close Menu" : "Open Menu"}
-              className="relative z-20 block cursor-pointer lg:hidden"
-              data-state={menuState ? "active" : "inactive"}
-            >
-              <div className="flex flex-col gap-[4px]">
-                <div
-                  className={`w-[30px] h-[2px] bg-white transition-all duration-300 ${
-                    menuState ? "rotate-45 translate-y-[6px]" : ""
-                  }`}
-                />
-                <div
-                  className={`w-[30px] h-[2px] bg-white transition-all duration-300 ${
-                    menuState ? "opacity-0 scale-0" : ""
-                  }`}
-                />
-                <div
-                  className={`w-[30px] h-[2px] bg-white transition-all duration-300 ${
-                    menuState ? "-rotate-45 -translate-y-[6px]" : ""
-                  }`}
-                />
-              </div>
-            </button>
+            <div className="lg:hidden flex justify-end items-end w-full px-7">
+              <button
+                onClick={() => setMenuState(!menuState)}
+                aria-label={menuState ? "Close Menu" : "Open Menu"}
+                className="relative z-20 block cursor-pointer lg:hidden"
+                data-state={menuState ? "active" : "inactive"}
+              >
+                <div className="flex flex-col gap-[4px]">
+                  <div
+                    className={`w-[30px] h-[2px] bg-white transition-all duration-300 ${
+                      menuState ? "rotate-45 translate-y-[6px]" : ""
+                    }`}
+                  />
+                  <div
+                    className={`w-[30px] h-[2px] bg-white transition-all duration-300 ${
+                      menuState ? "opacity-0 scale-0" : ""
+                    }`}
+                  />
+                  <div
+                    className={`w-[30px] h-[2px] bg-white transition-all duration-300 ${
+                      menuState ? "-rotate-45 -translate-y-[6px]" : ""
+                    }`}
+                  />
+                </div>
+              </button>
+            </div>
           </div>
         </div>
 
         {/* Mobile Menu */}
         <div
-          className={`fixed top-[72px] left-0 right-0 bottom-0 z-[1000] bg-black/80 backdrop-blur-md transition-all duration-300 lg:hidden ${
+          className={`fixed top-[84px] left-0 right-0 bottom-0 z-[1000] bg-white/10 backdrop-blur-md transition-all duration-300 lg:hidden ${
             menuState ? "opacity-100 visible" : "opacity-0 invisible"
           }`}
           onClick={() => setMenuState(false)}
         >
           <div
-            className={`absolute top-0 left-0 right-0 bg-black/95 backdrop-blur-xl border-b border-white/10 shadow-2xl transition-all duration-300 ${
+            className={`absolute top-0 left-0 right-0 bg-white/10 backdrop-blur-xl border-b border-white/10 shadow-2xl transition-all duration-300 ${
               menuState ? "translate-y-0" : "translate-y-full"
             }`}
             onClick={(e) => e.stopPropagation()}
@@ -137,7 +139,7 @@ export const HeroHeader = () => {
                     <Link
                       href={item.href}
                       className={`text-muted-foreground hover:text-accent-foreground block duration-150 ${
-                        pathname === item.href ? "text-white" : "text-[#525866]"
+                        pathname === item.href ? "text-white" : "text-[#ffffff]"
                       }`}
                       onClick={() => setMenuState(false)}
                     >
@@ -146,13 +148,7 @@ export const HeroHeader = () => {
                   </li>
                 ))}
               </ul>
-              <div className="mt-6 pt-6 border-t">
-                <Button asChild variant="outline" size="sm" className="w-full">
-                  <Link href="#" onClick={() => setMenuState(false)}>
-                    <span>Join waitlist</span>
-                  </Link>
-                </Button>
-              </div>
+            
             </div>
           </div>
         </div>
