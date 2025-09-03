@@ -21,7 +21,7 @@ export function ReusableCard({
   className = "",
   titleClassName = "font-[family-name:var(--font-sentex)] text-[24px] leading-[24px] uppercase mt-5",
   descriptionClassName = "text-[#c5c5c5] text-[24px] leading-[24px] font-[family-name:var(--font-vt323)] mt-2.5",
-  imageClassName = "w-full ",
+  imageClassName = " ",
 }: ReusableCardProps) {
   return (
     <div className={`relative z-[100] w-full h-full  ${className}`}>
@@ -50,7 +50,6 @@ export function ReusableCard({
         />
       </svg>
 
-
       {/* Content */}
       <div className="absolute inset-0 p-4 flex flex-col items-center text-white z-20">
         {image && (
@@ -59,8 +58,8 @@ export function ReusableCard({
             alt={title}
             width={296}
             height={296}
+          
             className={imageClassName}
-            
           />
         )}
         <h3 className={titleClassName}>{title}</h3>
