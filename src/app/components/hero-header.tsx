@@ -5,6 +5,7 @@ import React, { useState, useEffect } from "react";
 import { Button } from "./ui/button";
 import { Logo } from "./ui/icons";
 import { useSound } from "@/lib/useSound";
+import { ShufflingText } from "./ShufflingText";
 
 const menuItems = [
   { name: "About", href: "/" },
@@ -66,7 +67,12 @@ export const HeroHeader = () => {
                       }`}
                       onMouseEnter={playHoverSound}
                     >
-                      <span>{item.name}</span>
+                      <ShufflingText
+                        text={item.name}
+                        className="block"
+                        shuffleDuration={30}
+                        restoreDuration={80}
+                      />
                     </Link>
                   </li>
                 ))}
@@ -86,7 +92,12 @@ export const HeroHeader = () => {
                       }`}
                       onMouseEnter={playHoverSound}
                     >
-                      <span>{item.name}</span>
+                      <ShufflingText
+                        text={item.name}
+                        className="block"
+                        shuffleDuration={30}
+                        restoreDuration={80}
+                      />
                     </Link>
                   </li>
                 ))}
@@ -149,7 +160,12 @@ export const HeroHeader = () => {
                       onClick={() => setMenuState(false)}
                       onMouseEnter={playHoverSound}
                     >
-                      <span>{item.name}</span>
+                      <ShufflingText
+                        text={item.name}
+                        className="block"
+                        shuffleDuration={30}
+                        restoreDuration={80}
+                      />
                     </Link>
                   </li>
                 ))}
