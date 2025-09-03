@@ -8,10 +8,10 @@ import { useSound } from "@/lib/useSoundContext";
 import { ShufflingText } from "./ShufflingText";
 
 const menuItems = [
-  { name: "About", href: "/" },
-  { name: "Services", href: "/services" },
-  { name: "Projects", href: "/projects" },
-  { name: "Success", href: "/sucess" },
+  { name: "About", href: "#about" },
+  { name: "Services", href: "#services" },
+  { name: "Projects", href: "#projects" },
+  { name: "Success", href: "#success" },
 ];
 
 export const HeroHeader = () => {

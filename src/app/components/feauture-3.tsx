@@ -90,6 +90,7 @@ export default function Feauture3() {
 
   return (
     <motion.div
+    id="projects"
       className="pt-[60px] pb-[60px] md:pt-[98px] md:pb-[102px] bg-black relative"
       initial={{ opacity: 0, y: 50 }}
       animate={{ opacity: 1, y: 0 }}

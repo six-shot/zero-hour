@@ -99,6 +99,7 @@ export default function Feauture1() {
 
   return (
     <motion.div
+    id="services"
       className="pt-[60px] sm:pt-[100px] lg:pt-[181px] w-full relative px-4 sm:px-6 lg:px-0"
       initial={{ opacity: 0, y: 50 }}
       animate={{ opacity: 1, y: 0 }}
