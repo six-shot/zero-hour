@@ -3,6 +3,7 @@ import { VT323 } from "next/font/google";
 import localFont from "next/font/local";
 import "./globals.css";
 import ClientImageLoader from "./components/client-image-loader";
+import { SoundProvider } from "@/lib/useSoundContext";
 
 const vt323 = VT323({
   variable: "--font-vt323",
@@ -27,7 +28,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${vt323.variable} ${sentex.variable} antialiased`}>
-        <ClientImageLoader>{children}</ClientImageLoader>
+        <SoundProvider>
+          <ClientImageLoader>{children}</ClientImageLoader>
+        </SoundProvider>
       </body>
     </html>
   );

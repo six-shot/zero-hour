@@ -7,7 +7,7 @@ import { Button } from "./ui/button";
 import { useSound } from "@/lib/useSoundContext";
 
 export default function HeroSection() {
-  const { playSound: playHoverSound } = useSound();
+  const { playSound: playHoverSound, isAudioEnabled, debugInfo } = useSound();
 
   return (
     <div className=" relative">
