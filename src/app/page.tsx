@@ -19,12 +19,7 @@ export default function Home() {
       <CTA1 />
       <Testimonial />
       <FrequentlyAskedQuestions />
-
-      {/* 
-      
-
-
-      <CTA2 /> */}
+      <CTA2 />
     </div>
   );
 }
