@@ -14,12 +14,16 @@ export default function Home() {
     <div>
       <HeroSection />
       <Feauture1 />
-      {/* 
       <Feauture2 />
       <Feauture3 />
       <CTA1 />
       <Testimonial />
       <FrequentlyAskedQuestions />
+
+      {/* 
+      
+
+
       <CTA2 /> */}
     </div>
   );

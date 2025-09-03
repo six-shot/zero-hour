@@ -44,8 +44,6 @@ const featureCardsData = [
     ),
     image: "/4.svg",
   },
-
- 
 ];
 
 // Convert data to ReactNode array
@@ -57,6 +55,8 @@ const featureCards = featureCardsData.map((cardData, index) => (
     image={cardData.image}
     pattern={cardData.pattern}
     enableBlendMode={true}
+    imageClassName="w-[290px] h-[100%]"
+    descriptionClassName="text-[#c5c5c5] md:text-[24px] md:leading-[24px] text-[18px] leading-[22px] font-[family-name:var(--font-vt323)] mt-2.5"
   />
 ));
 

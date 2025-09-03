@@ -39,6 +39,22 @@ export const AutoSlider = forwardRef<AutoSliderRef, AutoSliderProps>(
   ) => {
     const [currentIndex, setCurrentIndex] = useState(0);
     const [isAnimating, setIsAnimating] = useState(false);
+    const [isMobile, setIsMobile] = useState(false);
+
+    // Handle responsive dimensions
+    useEffect(() => {
+      const checkMobile = () => {
+        setIsMobile(window.innerWidth < 768);
+      };
+
+      checkMobile();
+      window.addEventListener("resize", checkMobile);
+      return () => window.removeEventListener("resize", checkMobile);
+    }, []);
+
+    const responsiveCardWidth = isMobile ? 280 : cardWidth;
+    const responsiveCardGap = isMobile ? 16 : cardGap;
+    const responsiveContainerHeight = isMobile ? 400 : containerHeight;
 
     // Navigation functions with animation state management
     const goToPrevious = () => {
@@ -112,14 +128,14 @@ export const AutoSlider = forwardRef<AutoSliderRef, AutoSliderProps>(
         {/* Slider Container */}
         <div
           className="relative overflow-hidden"
-          style={{ height: `${containerHeight}px` }}
+          style={{ height: `${responsiveContainerHeight}px` }}
         >
           <motion.div
             className="flex"
-            style={{ gap: `${cardGap}px` }}
+            style={{ gap: `${responsiveCardGap}px` }}
             animate={{
               x: `calc(-${
-                currentIndex * (cardWidth + cardGap)
+                currentIndex * (responsiveCardWidth + responsiveCardGap)
               }px + max(0px, (100vw - 1440px) / 2))`,
             }} // Dynamic width + gap, with responsive offset
             transition={{
@@ -133,8 +149,8 @@ export const AutoSlider = forwardRef<AutoSliderRef, AutoSliderProps>(
                 key={index}
                 className="relative flex-shrink-0"
                 style={{
-                  width: `${cardWidth}px`,
-                  height: `${containerHeight}px`,
+                  width: `${responsiveCardWidth}px`,
+                  height: `${responsiveContainerHeight}px`,
                 }}
                 initial={{ opacity: 0, y: 60 }}
                 animate={{ opacity: 1, y: 0 }}

@@ -32,7 +32,9 @@ export function ReusableCard({
   );
 
   return (
-    <div className={`w-[384px] h-[538px] relative ${className}`}>
+    <div
+      className={`w-[280px] h-[400px] md:w-[384px] md:h-[538px] relative ${className}`}
+    >
       {/* SVG Background */}
       <svg
         width="384"
@@ -59,7 +61,7 @@ export function ReusableCard({
       </svg>
 
       {/* Content Layer */}
-      <div className="relative z-10 p-6 flex flex-col h-full">
+      <div className="relative z-10 p-4 md:p-6 flex flex-col h-full">
         {image && (
           <div className="flex justify-center items-center bg-[#0B0211]">
             <Image
@@ -69,7 +71,7 @@ export function ReusableCard({
               height={256}
               className={`${
                 enableBlendMode ? "mix-blend-luminosity" : ""
-              } ${imageClassName}`}
+              } ${imageClassName} w-[200px] h-[170px]  md:h-full object-contain`}
             />
           </div>
         )}

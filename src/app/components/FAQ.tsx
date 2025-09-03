@@ -39,7 +39,7 @@ export default function FrequentlyAskedQuestions() {
   ];
 
   return (
-    <div className="relative py-[109px]">
+    <div className="relative py-8 sm:py-12 md:py-16 lg:py-[109px] px-4 sm:px-6 lg:px-8">
       {/* Background layer */}
       <div
         className="w-full h-full absolute inset-0 z-10"
@@ -52,21 +52,21 @@ export default function FrequentlyAskedQuestions() {
 
       {/* Content layer */}
       <div className="relative z-10">
-        <div className="max-w-[1440px] mx-auto ">
-          <div className="grid grid-cols-2 gap-[11px] items-center">
-            <div className="w-full h-[657px] border-[0.5px] border-[#B7B4B4] relative">
+        <div className="max-w-[1440px] mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-[11px] items-center">
+            <div className="w-full h-[300px] sm:h-[400px] md:h-[500px] lg:h-[657px] border-[0.5px] border-[#B7B4B4] relative order-1 lg:order-1">
               <Image
                 src="/faq.svg"
-                className=" w-full h-full mix"
+                className="w-full h-full mix"
                 alt="cta"
                 width={660}
                 height={1174}
               />
-              <h3 className="text-[119px] leading-[119px] text-left font-[family-name:var(--font-sentex)] uppercase absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+              <h3 className="text-[40px] sm:text-[60px] md:text-[80px] lg:text-[119px] leading-[40px] sm:leading-[60px] md:leading-[80px] lg:leading-[119px] text-left font-[family-name:var(--font-sentex)] uppercase absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
                 FAQS
               </h3>
             </div>
-            <div className="flex flex-col w-full  h-[657px] justify-between">
+            <div className="flex flex-col w-full h-auto lg:h-[657px] justify-between gap-2 lg:gap-0 order-2 lg:order-2">
               {data.map((item, index) => (
                 <Accordion
                   key={index}
@@ -114,9 +114,9 @@ const Accordion = ({
         isOpen ? "pb-3" : "py-1.5"
       }`}
     >
-      <div className=" px-2.5  ">
+      <div className="px-2.5">
         <motion.button className="flex justify-between items-start w-full py-[10px]">
-          <span className="text-[33px] leading-[33px] text-left font-[family-name:var(--font-vt323)] uppercase">
+          <span className="text-[18px] sm:text-[24px] md:text-[28px] lg:text-[33px] leading-[18px] sm:leading-[24px] md:leading-[28px] lg:leading-[33px] text-left font-[family-name:var(--font-vt323)] uppercase pr-2">
             {title}
           </span>
           <div
@@ -167,7 +167,7 @@ const Accordion = ({
               transition={{ duration: 0.3 }}
               className="overflow-hidden"
             >
-              <div className="text-[25px] leading-[24px] font-[family-name:var(--font-vt323)] uppercase ">
+              <div className="text-[14px] sm:text-[18px] md:text-[20px] lg:text-[25px] leading-[14px] sm:leading-[18px] md:leading-[20px] lg:leading-[24px] font-[family-name:var(--font-vt323)] uppercase">
                 {answer}
               </div>
             </motion.div>

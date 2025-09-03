@@ -7,52 +7,28 @@ import { ReusableCard } from "./ReusableCard";
 // Victory cards data for the slider
 const victoryCardsData = [
   {
-    title: "CRYPTO PUNKS REVOLUTION",
+    title: "EOFlow",
     description:
       "Turning life-saving health technology into a decentralized movement that rewards every heartbeat.",
     image: "/eoflow.svg",
   },
   {
-    title: "CRYPTO PUNKS REVOLUTION",
+    title: "Purple Talk",
     description:
-      "Turning life-saving health technology into a decentralized movement that rewards every heartbeat.",
+      "PurpleTalk’s AI-driven Early Autism Test System (EATS) enables pediatricians to deliver accurate, objective autism diagnoses in just two minutes. EATS is supported by research from Massachusetts General Hospital —a Harvard Medical School affiliate—and achieves a remarkable 92% accuracy rate.",
     image: "/33.svg",
   },
   {
-    title: "CRYPTO PUNKS REVOLUTION",
+    title: "Apex AI",
     description:
-      "Turning life-saving health technology into a decentralized movement that rewards every heartbeat.",
+      "Apex AI’s artificial intelligence delivers unprecedented accuracy (95%+) in identifying early-stage gastrointestinal (GI) cancers. Developed in partnership with Korea’s leading institutions, including Seoul National University Bundang Hospital and the Catholic University of Korea, and trained on over 1 million GI endoscopy images, Apex AI empowers doctors with early, life-saving cancer detection.",
     image: "/eoflow.svg",
   },
   {
-    title: "CRYPTO PUNKS REVOLUTION",
+    title: "MySmaX",
     description:
-      "Turning life-saving health technology into a decentralized movement that rewards every heartbeat.",
+      "Transformed a classic Web2 MMORPG into a player-owned metaverse with NFT characters, land ownership, and DAO governance.",
     image: "/33.svg",
-  },
-  {
-    title: "CRYPTO PUNKS REVOLUTION",
-    description:
-      "Turning life-saving health technology into a decentralized movement that rewards every heartbeat.",
-    image: "/eoflow.svg",
-  },
-  {
-    title: "CRYPTO PUNKS REVOLUTION",
-    description:
-      "Turning life-saving health technology into a decentralized movement that rewards every heartbeat.",
-    image: "/33.svg",
-  },
-  {
-    title: "CRYPTO PUNKS REVOLUTION",
-    description:
-      "Turning life-saving health technology into a decentralized movement that rewards every heartbeat.",
-    image: "/eoflow.svg",
-  },
-  {
-    title: "CRYPTO PUNKS REVOLUTION",
-    description:
-      "Turning life-saving health technology into a decentralized movement that rewards every heartbeat.",
-    image: "/eoflow.svg",
   },
 ];
 
@@ -63,8 +39,8 @@ const victoryCards = victoryCardsData.map((cardData, index) => (
     title={cardData.title}
     description={cardData.description}
     image={cardData.image}
-    titleClassName="font-[family-name:var(--font-sentex)] text-[24px] leading-[24px] uppercase mt-5"
-    descriptionClassName="text-[#c5c5c5] text-[20px] leading-[20px] font-[family-name:var(--font-vt323)] mt-2.5"
+    titleClassName="font-[family-name:var(--font-sentex)] text-[18px] md:text-[24px] leading-[18px] md:leading-[24px] uppercase mt-5"
+    descriptionClassName="text-[#c5c5c5] text-[14px] md:text-[20px] leading-[16px] md:leading-[20px] font-[family-name:var(--font-vt323)] mt-2.5"
     imageClassName="w-full"
     enableBlendMode={false}
   />
@@ -89,7 +65,7 @@ export default function Feauture3() {
   };
 
   return (
-    <div className="pt-[98px] pb-[102px] bg-black relative">
+    <div className="pt-[60px] pb-[60px] md:pt-[98px] md:pb-[102px] bg-black relative">
       <div
         className="w-full h-full absolute inset-0 z-10"
         style={{
@@ -106,23 +82,23 @@ export default function Feauture3() {
           backgroundSize: "auto",
         }}
       />
-      <div className="max-w-[1440px] mx-auto relative z-[1000]">
+      <div className="max-w-[1440px] mx-auto relative z-[1000] px-4 md:px-0">
         <div className="flex flex-col items-center">
           <div className="px-2.5 h-[23px] border border-[#4D4D4D] rounded-[9px] flex items-center mb-[22px]">
-            <div className="px-2 flex items-center gap-[2px] text-[17px] text-white font-[family-name:var(--font-vt323)] uppercase ">
+            <div className="px-2 flex items-center gap-[2px] text-[14px] md:text-[17px] text-white font-[family-name:var(--font-vt323)] uppercase ">
               <span>Success protocol</span>
             </div>
           </div>
-          <h4 className="text-[38px] leading-[38px] font-[family-name:var(--font-sentex)] text-white uppercase text-center">
+          <h4 className="text-[24px] md:text-[38px] leading-[24px] md:leading-[38px] font-[family-name:var(--font-sentex)] text-white uppercase text-center px-4">
             ZEROhoURS VICTORIES
           </h4>
-          <p className="text-[28px] leading-[28px] font-[family-name:var(--font-vt323)] text-white uppercase mt-[17px]">
+          <p className="text-[16px] md:text-[28px] leading-[20px] md:leading-[28px] font-[family-name:var(--font-vt323)] text-white uppercase mt-[17px] text-center px-4">
             Witness the transformation. These IPs didn&apos;t just survive the
             Web3 transition—
-            <br /> they evolved into something more powerful than their creators
-            ever imagined.
+            <br className="hidden md:block" /> they evolved into something more
+            powerful than their creators ever imagined.
           </p>
-          <div className="flex justify-end items-center w-full my-[31px]">
+          <div className="flex justify-end items-center w-full my-[31px] px-4 md:px-0">
             <div className="relative z-[1000]">
               <NavigationArrows
                 onPrevious={handlePrevious}

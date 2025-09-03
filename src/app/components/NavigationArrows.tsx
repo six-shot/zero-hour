@@ -91,7 +91,7 @@ export function NavigationArrows({
   className,
 }: NavigationArrowsProps) {
   return (
-    <div className={cn("flex gap-[42px] z-50", className)}>
+    <div className={cn("flex gap-6 md:gap-[42px] z-50", className)}>
       <LeftArrow onClick={onPrevious} disabled={!canGoPrevious} />
       <RightArrow onClick={onNext} disabled={!canGoNext} />
     </div>
