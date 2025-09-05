@@ -39,7 +39,7 @@ export default function FrequentlyAskedQuestions() {
   ];
 
   return (
-    <div className="relative py-8 sm:py-12 md:py-16 lg:py-[109px] px-4 sm:px-6 lg:px-8">
+    <div className="relative pt-8 sm:pt-12 md:pt-16 lg:pt-[109px] px-4 sm:px-6 lg:px-8">
       {/* Background layer */}
       <div
         className="w-full h-full absolute inset-0 z-10"

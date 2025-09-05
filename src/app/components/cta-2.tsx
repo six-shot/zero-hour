@@ -30,7 +30,7 @@ export default function CTA2() {
 
   return (
     <motion.div
-      className="relative py-4 sm:py-6 lg:py-8"
+      className="relative mt-14 md:mt-[50px] lg:mt-[108px] "
       initial={{ opacity: 0, y: 50 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{
@@ -49,7 +49,7 @@ export default function CTA2() {
       <div className="max-w-[1440px] mx-auto relative z-100 px-4 sm:px-6 lg:px-0">
         <motion.div
           ref={containerRef}
-          className="border-[0.5px] border-[#ffffff5f] h-[250px] sm:h-[400px] lg:h-[511px] py-8 sm:py-12 lg:py-[63px] px-6 sm:px-8 lg:px-[34px] rounded-[19px] flex flex-col items-start relative"
+          className="border-[0.5px] border-[#ffffff5f] h-[300px] sm:h-[400px] lg:h-[511px] py-8 sm:py-12 lg:py-[63px] px-6 sm:px-8 lg:px-[34px] rounded-[19px] flex flex-col items-start relative"
           initial={{ opacity: 0, scale: 0.95 }}
           animate={
             containerInView
@@ -133,7 +133,7 @@ export default function CTA2() {
             </motion.div>
             <motion.div
               ref={buttonRef}
-              className="mt-6 sm:mt-8 lg:mt-[35px] flex justify-end items-end w-full px-[70px]"
+              className="mt-6 sm:mt-8 lg:mt-[35px] flex justify-end items-end w-full md:px-[70px]"
               initial={{ opacity: 0, y: 30 }}
               animate={
                 buttonInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }
