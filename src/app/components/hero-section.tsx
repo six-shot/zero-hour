@@ -114,7 +114,6 @@ export default function HeroSection() {
           >
             <motion.div
               className="absolute -right-[200px] top-[92px] hidden md:block"
-         
               transition={{ duration: 1.2, delay: 1.2, ease: "easeOut" }}
             >
               <Pluses />
@@ -210,14 +209,15 @@ export default function HeroSection() {
         className="mt-[60px] md:mt-[117px] h-[300px] md:h-[589px] relative overflow-hidden"
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1.0, delay: 2.0 }}
+        transition={{ duration: 1.0, delay: 1.0 }}
+        style={{ mixBlendMode: "luminosity" }}
       >
         <Image
           src="/sub-hero.svg"
           alt="hero"
           width={1801}
           height={589}
-          className="opacity-[0.38] mix-blend-luminosity w-full h-full object-contain"
+          className="opacity-[0.38] w-full h-full object-contain"
         />
       </motion.div>
     </div>

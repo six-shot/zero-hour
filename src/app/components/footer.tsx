@@ -259,7 +259,7 @@ export default function Footer() {
           </div>
         </div>
       </div>
-      <p className="text-center text-[#949494] text-[14px] md:text-[17px] pb-[46px] px-4">
+      <p className="text-center text-[#949494] text-[14px] md:text-[17px] pb-[46px] px-4 font-[family-name:var(--font-inter)]">
         © 2025 ZeroHour. All rights reserved.
       </p>
     </div>

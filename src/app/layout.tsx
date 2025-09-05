@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { VT323 } from "next/font/google";
+import { Inter, VT323 } from "next/font/google";
 import localFont from "next/font/local";
 import "./globals.css";
 import ClientImageLoader from "./components/client-image-loader";
@@ -10,6 +10,12 @@ const vt323 = VT323({
   subsets: ["latin"],
   weight: ["400"],
 });
+
+const inter = Inter({
+  variable : "--font-inter",
+  subsets:["latin"]
+
+})
 
 export const metadata: Metadata = {
   title: "Zero hour",
@@ -27,7 +33,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${vt323.variable} ${sentex.variable} antialiased`}>
+      <body className={`${vt323.variable} ${sentex.variable} ${inter.variable} antialiased`}>
         <SoundProvider>
           <ClientImageLoader>{children}</ClientImageLoader>
         </SoundProvider>

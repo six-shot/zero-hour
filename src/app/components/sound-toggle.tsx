@@ -12,7 +12,7 @@ export const SoundToggle = () => {
   return (
     <button
       onClick={enableAudio}
-      className="fixed bottom-6 right-6 z-50 bg-black/40 hover:bg-black/60 text-white text-sm px-4 py-2 rounded-full border border-white/20 backdrop-blur-md transition-all duration-300 hover:scale-105 hover:shadow-[0_0_20px_rgba(255,255,255,0.2)] group"
+      className="fixed bottom-6 right-6 z-[200] bg-black/40 hover:bg-black/60 text-white text-sm px-4 py-2 rounded-full border border-white/20 backdrop-blur-md transition-all duration-300 hover:scale-105 hover:shadow-[0_0_20px_rgba(255,255,255,0.2)] group"
       title="Enable sound effects"
     >
       <div className="flex items-center gap-2">
