@@ -114,8 +114,7 @@ export default function HeroSection() {
           >
             <motion.div
               className="absolute -right-[200px] top-[92px] hidden md:block"
-              initial={{ opacity: 0, rotate: -180 }}
-              animate={{ opacity: 1, rotate: 0 }}
+         
               transition={{ duration: 1.2, delay: 1.2, ease: "easeOut" }}
             >
               <Pluses />

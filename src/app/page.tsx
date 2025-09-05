@@ -21,6 +21,7 @@ export default function Home() {
         <Testimonial />
         <FrequentlyAskedQuestions />
         <CTA2 />
+   
       </div>
     </SoundProvider>
   );
