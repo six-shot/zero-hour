@@ -1,6 +1,5 @@
 "use client";
 import React, { useState, useEffect, ReactNode } from "react";
-import { preloadAllImages } from "../../lib/image-preloader";
 import Image from "next/image";
 import SVGProgressLoader from "./SVGProgressLoader";
 
@@ -33,37 +32,28 @@ const GlobalImageLoader: React.FC<GlobalImageLoaderProps> = ({
   }, [progress, displayProgress]);
 
   useEffect(() => {
-    const loadAllImages = async () => {
-      try {
-        // Start preloading with real-time progress updates
-        const success = await preloadAllImages((progress: number) =>
-          setProgress(progress)
-        );
+    // Fast loading simulation - show content quickly
+    const fastLoad = () => {
+      // Simulate quick initial load
+      setProgress(20);
 
-        // Ensure we end at 100%
-        setProgress(100);
+      setTimeout(() => {
+        setProgress(60);
+      }, 200);
 
-        // Wait for display animation to reach 100% before transitioning
-        setTimeout(
-          () => {
-            setIsLoading(false);
-            onLoadingComplete?.();
-          },
-          success ? 800 : 1000 // Give time for smooth animation to complete
-        );
-      } catch (error) {
-        console.error("Image preloading failed:", error);
-        // Proceed anyway with minimal delay
+      setTimeout(() => {
         setProgress(100);
-        setTimeout(() => {
-          setIsLoading(false);
-          onLoadingComplete?.();
-        }, 1000);
-      }
+      }, 400);
+
+      // Show content after very short delay
+      setTimeout(() => {
+        setIsLoading(false);
+        onLoadingComplete?.();
+      }, 600);
     };
 
-    // Start loading immediately
-    loadAllImages();
+    // Start fast loading immediately
+    fastLoad();
   }, [onLoadingComplete]);
 
   if (isLoading) {
@@ -75,6 +65,7 @@ const GlobalImageLoader: React.FC<GlobalImageLoaderProps> = ({
           width={1452}
           height={830}
           alt="loader-hero"
+          priority
         />
 
         <div className="flex flex-col justify-center items-center h-full relative z-10">
