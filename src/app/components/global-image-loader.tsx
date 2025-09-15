@@ -1,5 +1,6 @@
 "use client";
 import React, { useState, useEffect, ReactNode } from "react";
+import { preloadCriticalImages } from "../../lib/image-preloader";
 import Image from "next/image";
 import SVGProgressLoader from "./SVGProgressLoader";
 
@@ -22,38 +23,50 @@ const GlobalImageLoader: React.FC<GlobalImageLoaderProps> = ({
       if (displayProgress < progress) {
         // Use easing function for smoother animation
         const difference = progress - displayProgress;
-        const increment = Math.max(1, Math.ceil(difference * 0.15)); // 15% of remaining difference
+        const increment = Math.max(1, Math.ceil(difference * 0.2)); // 20% of remaining difference for faster animation
         setDisplayProgress((prev) => Math.min(prev + increment, progress));
       }
     };
 
-    const interval = setInterval(animateProgress, 30); // Update every 30ms for very smooth animation
+    const interval = setInterval(animateProgress, 20); // Update every 20ms for ultra smooth animation
     return () => clearInterval(interval);
   }, [progress, displayProgress]);
 
   useEffect(() => {
-    // Fast loading simulation - show content quickly
-    const fastLoad = () => {
-      // Simulate quick initial load
-      setProgress(20);
+    const loadCriticalImages = async () => {
+      try {
+        console.log("⚡ Starting ULTRA FAST critical image preloading...");
 
-      setTimeout(() => {
-        setProgress(60);
-      }, 200);
+        // Start preloading only critical images with real-time progress updates
+        const success = await preloadCriticalImages((progress: number) =>
+          setProgress(progress)
+        );
 
-      setTimeout(() => {
+        // Ensure we end at 100%
         setProgress(100);
-      }, 400);
 
-      // Show content after very short delay
-      setTimeout(() => {
-        setIsLoading(false);
-        onLoadingComplete?.();
-      }, 600);
+        // Ultra short delay for smooth transition
+        setTimeout(
+          () => {
+            setIsLoading(false);
+            onLoadingComplete?.();
+            console.log("⚡ Critical images loaded! Showing content...");
+          },
+          success ? 200 : 300 // Ultra fast transition
+        );
+      } catch (error) {
+        console.error("Critical image preloading failed:", error);
+        // Proceed anyway with minimal delay
+        setProgress(100);
+        setTimeout(() => {
+          setIsLoading(false);
+          onLoadingComplete?.();
+        }, 300);
+      }
     };
 
-    // Start fast loading immediately
-    fastLoad();
+    // Start loading immediately
+    loadCriticalImages();
   }, [onLoadingComplete]);
 
   if (isLoading) {

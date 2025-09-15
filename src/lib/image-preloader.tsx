@@ -1,11 +1,15 @@
-// Define all images used in the app
-const APP_IMAGES = [
-  // Hero section images
+// Define CRITICAL images that need to be preloaded for fast experience
+const CRITICAL_IMAGES = [
+  // Hero section images (most important)
   "/hero.svg",
   "/zero.svg",
   "/sub-hero.svg",
   "/mask.svg",
+  "/loader-hero.svg",
+];
 
+// Define secondary images that can load progressively
+const SECONDARY_IMAGES = [
   // Feature section images
   "/1.svg",
   "/2.svg",
@@ -30,8 +34,63 @@ const APP_IMAGES = [
   "/telegram.svg",
 ];
 
+// Combine all images for full preloading
+const APP_IMAGES = [...CRITICAL_IMAGES, ...SECONDARY_IMAGES];
+
 /**
- * Preload all images for the entire app
+ * Preload only CRITICAL images for ULTRA FAST initial load
+ * @param onProgress - Callback function to report progress (0-100)
+ * @returns {Promise<boolean>} - Resolves when critical images are loaded
+ */
+export const preloadCriticalImages = async (
+  onProgress?: (progress: number) => void
+): Promise<boolean> => {
+  console.log(
+    `⚡ ULTRA FAST preloading ${CRITICAL_IMAGES.length} critical images...`
+  );
+
+  try {
+    let loadedCount = 0;
+    const total = CRITICAL_IMAGES.length;
+
+    const report = () => {
+      if (onProgress) {
+        const percent = Math.round((loadedCount / total) * 100);
+        onProgress(percent);
+      }
+    };
+
+    // Optimize connections for faster loading
+    optimizeConnections();
+
+    // ULTRA FAST parallel loading with immediate progress updates
+    const loadPromises = CRITICAL_IMAGES.map((src, index) => {
+      return preloadSingleImageUltraFast(src)
+        .then(() => {
+          loadedCount += 1;
+          report();
+          console.log(`⚡ Critical loaded ${index + 1}/${total}: ${src}`);
+        })
+        .catch((err) => {
+          console.error(`❌ Failed: ${src}`, err);
+          loadedCount += 1;
+          report();
+        });
+    });
+
+    // Load critical images simultaneously with maximum concurrency
+    await Promise.allSettled(loadPromises);
+
+    report();
+    return true;
+  } catch (error) {
+    console.error("❌ Critical preloading failed:", error);
+    return false;
+  }
+};
+
+/**
+ * Preload all images for the entire app with ULTRA FAST loading
  * @param onProgress - Callback function to report progress (0-100)
  * @returns {Promise<boolean>} - Resolves when all images are loaded
  */
@@ -41,7 +100,7 @@ export const preloadAllImages = async (
   // Remove duplicates
   const uniqueImages = [...new Set(APP_IMAGES)];
 
-  console.log(`🖼️ Preloading ${uniqueImages.length} app images...`);
+  console.log(`🚀 ULTRA FAST preloading ${uniqueImages.length} app images...`);
 
   try {
     let loadedCount = 0;
@@ -57,13 +116,13 @@ export const preloadAllImages = async (
     // Optimize connections for faster loading
     optimizeConnections();
 
-    // Preload all app images with aggressive parallel loading
+    // ULTRA FAST parallel loading with immediate progress updates
     const loadPromises = uniqueImages.map((src, index) => {
-      return preloadSingleImage(src)
+      return preloadSingleImageUltraFast(src)
         .then(() => {
           loadedCount += 1;
           report();
-          console.log(`✅ Loaded ${index + 1}/${total}: ${src}`);
+          console.log(`⚡ Loaded ${index + 1}/${total}: ${src}`);
         })
         .catch((err) => {
           console.error(`❌ Failed: ${src}`, err);
@@ -72,7 +131,7 @@ export const preloadAllImages = async (
         });
     });
 
-    // Load all images simultaneously for maximum speed
+    // Load all images simultaneously with maximum concurrency
     await Promise.allSettled(loadPromises);
 
     report();
@@ -103,36 +162,55 @@ const optimizeConnections = () => {
 };
 
 /**
- * Preload a single image with aggressive optimization
+ * Preload a single image with ULTRA FAST optimization
  * @param src - Image source URL
  * @returns Promise that resolves with loaded image
  */
-const preloadSingleImage = (src: string): Promise<HTMLImageElement> => {
+const preloadSingleImageUltraFast = (
+  src: string
+): Promise<HTMLImageElement> => {
   return new Promise((resolve, reject) => {
     const img = new Image();
 
-    // Set loading priority for faster loading
+    // ULTRA FAST loading settings
     img.loading = "eager";
     img.decoding = "async";
+    img.fetchPriority = "high";
 
     // Set crossOrigin if needed for Cloudinary
     if (src.includes("cloudinary.com")) {
       img.crossOrigin = "anonymous";
     }
 
+    // Set timeout for very fast loading
+    const timeout = setTimeout(() => {
+      console.warn(`⏰ Timeout loading: ${src}`);
+      reject(new Error(`Timeout loading image: ${src}`));
+    }, 2000); // 2 second timeout
+
     img.onload = () => {
-      console.log(`✅ Loaded: ${src}`);
+      clearTimeout(timeout);
       resolve(img);
     };
 
     img.onerror = () => {
+      clearTimeout(timeout);
       console.warn(`❌ Failed to load: ${src}`);
       reject(new Error(`Failed to load image: ${src}`));
     };
 
-    // Start loading immediately
+    // Start loading immediately with high priority
     img.src = src;
   });
+};
+
+/**
+ * Preload a single image with aggressive optimization (fallback)
+ * @param src - Image source URL
+ * @returns Promise that resolves with loaded image
+ */
+const preloadSingleImage = (src: string): Promise<HTMLImageElement> => {
+  return preloadSingleImageUltraFast(src);
 };
 
 /**

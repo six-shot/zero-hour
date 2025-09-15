@@ -12,14 +12,14 @@ const vt323 = VT323({
 });
 
 const inter = Inter({
-  variable : "--font-inter",
-  subsets:["latin"]
-
-})
+  variable: "--font-inter",
+  subsets: ["latin"],
+});
 
 export const metadata: Metadata = {
   title: "Zero hour",
-  description: "Helping systems strategically tokenize, dedicated to growing Web-3 roots into your IP",
+  description:
+    "Helping systems strategically tokenize, dedicated to growing Web-3 roots into your IP",
 };
 const sentex = localFont({
   src: "../../public/fonts/Sentex-Regular.ttf",
@@ -33,7 +33,29 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${vt323.variable} ${sentex.variable} ${inter.variable} antialiased`}>
+      <head>
+        {/* Preload critical resources for ultra-fast loading */}
+        <link rel="preload" href="/loader-hero.svg" as="image" />
+        <link rel="preload" href="/hero.svg" as="image" />
+        <link rel="preload" href="/zero.svg" as="image" />
+        <link rel="preload" href="/sub-hero.svg" as="image" />
+        <link rel="preload" href="/mask.svg" as="image" />
+
+        {/* DNS prefetch for faster connections */}
+        <link rel="dns-prefetch" href="//fonts.googleapis.com" />
+        <link rel="dns-prefetch" href="//fonts.gstatic.com" />
+
+        {/* Preconnect to external domains */}
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link
+          rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossOrigin="anonymous"
+        />
+      </head>
+      <body
+        className={`${vt323.variable} ${sentex.variable} ${inter.variable} antialiased`}
+      >
         <SoundProvider>
           <ClientImageLoader>{children}</ClientImageLoader>
         </SoundProvider>
